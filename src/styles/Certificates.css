@@ -1,0 +1,241 @@
+/* src/styles/Certificates.css */
+
+.certificatesWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Ensures consistency in font styling */
+}
+
+.navbar-container {
+    width: 100%;
+    background-color: #3e5b8ecf; /* Matches the topNav background color */
+    overflow-x: auto; /* Enables horizontal scrolling if needed */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures navbar stays on top */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevents wrapping by default */
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.nav-button {
+    background-color: #e9ecef;
+    color: #6a6a6a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    flex: 0 0 auto; /* Prevents buttons from shrinking */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #6a6a6a;
+    color: white;
+}
+
+.nav-button.active {
+    background-color: #6a6a6a;
+    color: white;
+}
+
+.contentBox {
+    width: 80%;
+    background-color: #fdfdfd;
+    margin: 20px auto; /* Centers the box horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Aligns all text to the left */
+}
+
+.sectionHeading,
+.smallSectionHeading,
+.verySmallSectionHeading {
+    /* Existing styles */
+    /* Responsive font sizes */
+    font-weight: bold; /* Enhances visibility */
+    color: #333;
+    margin: 20px 0;
+    scroll-margin-top: 60px; /* Adjust based on navbar height */
+}
+
+.sectionHeading {
+    font-size: 24px;
+}
+
+.smallSectionHeading {
+    font-size: 18px;
+}
+
+.verySmallSectionHeading {
+    font-size: 14px;
+}
+
+.contentInfo,
+.smallContentInfo,
+.verySmallContentInfo {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.smallContentInfo {
+    font-size: 14px;
+}
+
+.verySmallContentInfo {
+    font-size: 12px;
+}
+
+.que {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.que ol {
+    padding-left: 20px;
+}
+
+.vSmallHeading {
+    font-weight: 500;
+    margin: 10px 0; 
+    font-size: medium;
+    color: black;
+}
+
+.answer {
+    margin-bottom: 15px; /* Adds space below each answer */
+    color: #555; /* Slightly darker color for the answer text */
+}
+
+.currentStudents,
+.studentsAlumni {
+    margin-top: 20px;
+}
+
+a {
+    color: #1a0dab; /* Standard link color */
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fdfdfd; /* Hover color for links */
+}
+
+p {
+    margin: 10px 0;
+}
+
+b {
+    color: #333;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+    .contentBox {
+        width: 90%;
+    }
+}
+
+@media (max-width: 800px) {
+    .buttons {
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        justify-content: center;
+    }
+
+    .nav-button {
+        flex: 1 1 45%; /* Adjusts button width for smaller screens */
+        min-width: 120px;
+    }
+
+    .sectionHeading {
+        font-size: 22px;
+    }
+
+    .smallSectionHeading {
+        font-size: 16px;
+    }
+
+    .verySmallSectionHeading {
+        font-size: 12px;
+    }
+
+    .contentInfo {
+        font-size: 14px;
+    }
+
+    .smallContentInfo {
+        font-size: 12px;
+    }
+
+    .verySmallContentInfo {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-button {
+        width: 90%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .contentBox {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .sectionHeading {
+        font-size: 20px;
+    }
+
+    .smallSectionHeading {
+        font-size: 14px;
+    }
+
+    .verySmallSectionHeading {
+        font-size: 10px;
+    }
+
+    .contentInfo {
+        font-size: 12px;
+    }
+
+    .smallContentInfo {
+        font-size: 10px;
+    }
+
+    .verySmallContentInfo {
+        font-size: 8px;
+    }
+}
+
+/* Focus States for Accessibility */
+.nav-button:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+}

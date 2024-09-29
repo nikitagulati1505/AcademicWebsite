@@ -1,0 +1,90 @@
+.navbar{
+    font-size: 0.84vw;
+    font-weight: bold;
+    padding-left: 0.6vw;
+    padding-right: 0.6vw;
+    justify-content: space-between;
+    background-color: white;
+    display: flex;
+    border-bottom: 2px solid #dbdada;
+    text-decoration: none;
+    position: sticky; top: 0;
+    z-index: 9;
+}
+.navContainer{
+    position: sticky; top: 0;
+    z-index: 9;
+}
+
+.navbarHome{
+    color: black;
+    text-decoration: none;
+}
+.navbarHomeChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarStudent{
+    color: black;
+    text-decoration: none;
+}
+.navbarStudentChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarFaculty{
+    color: black;
+    text-decoration: none;
+}
+.navbarFacultyChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarAlumni{
+    color: black;
+    text-decoration: none;
+}
+.navbarAlumniChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarProjects{
+    color: black;
+    text-decoration: none;
+}
+.navbarProjectsChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarReport{
+    color: black;
+    text-decoration: none;
+}
+.navbarReportChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarConvocation{
+    color: black;
+    text-decoration: none;
+}
+.navbarConvocationChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarClassroom{
+    color: black;
+    text-decoration: none;
+}
+.navbarClassroomChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}
+.navbarContact{
+    color: black;
+    text-decoration: none;
+}
+.navbarContactChange{
+    color: rgb(10, 1, 61);
+    text-decoration: none;
+}

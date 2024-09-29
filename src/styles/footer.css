@@ -1,0 +1,19 @@
+.footer{
+    background-color: #555555;
+    height: 6vh;
+    margin-top: 2vh;
+    padding-top: 1vh;
+    font-weight: 500;
+    color: white;
+}
+.smallFooter{
+    background-color: #555555;
+    height: 4.2vh;
+    margin-top: 2vh;
+    padding-top: 1vh;
+    font-weight: 500;
+    color: white;
+}
+.smallContentFooter{
+    font-size:12px;
+}

@@ -1,0 +1,206 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+.teamSection {
+  margin-bottom: 40px; /* Gap between each row */
+}
+
+/* Main heading styles */
+.mainHeading {
+  font-size: 2.5em;
+  text-align: center;
+  color: rgb(3, 168, 163);
+  margin-bottom: 40px;
+}
+
+/* Box to contain all team sections */
+.teamBox {
+  display: flex;
+  flex-direction: column;
+  background-color: #b2d3d386;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Wrapper for DoAA and Registrar sections */
+.doaaRegistrarWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px; 
+}
+
+/* Sub-team heading styles */
+.subTeamHeadingLarge, .subTeamHeadingMedium, .subTeamHeadingSmall {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: black;
+  text-align: center;
+}
+
+/* Card wrapper and card styles */
+.teamCardWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the cards */
+  flex-wrap: wrap;
+}
+
+.teamCardLarge {
+  width: 220px;
+  height: 320px;
+  background-color: #b2d3d386;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.teamCardMedium {
+  width: 200px;
+  height: 300px;
+}
+
+.teamCardSmall {
+  width: 180px;
+  height: 280px;
+}
+
+.teamCardImage {
+  width: 80%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.teamCardInfo {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.teamMemberName {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.teamMemberRole {
+  font-size: 1em;
+  color: #080000;
+}
+
+/* Hover effect */
+.teamCardLarge:hover, .teamCardMedium:hover, .teamCardSmall:hover {
+  transform: translateY(-5px);
+  background-color: rgba(90, 150, 150, 0.637);
+}
+
+/* Media queries for further responsiveness */
+@media (max-width: 800px) {
+  .teamBox {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doaaRegistrarWrapper {
+    flex-direction: column; /* Stack on smaller screens */
+    align-items: center;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .teamBox {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .teamCardWrapper {
+    justify-content: space-around;
+  }
+
+  .teamCardLarge, .teamCardMedium, .teamCardSmall {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .doaaRegistrarWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 2em;
+  }
+
+  .teamBox {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .teamCardLarge, .teamCardMedium, .teamCardSmall {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .teamCardImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .subTeamHeadingLarge, .subTeamHeadingMedium, .subTeamHeadingSmall {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 1.8em;
+  }
+
+  .teamCardLarge, .teamCardMedium, .teamCardSmall {
+    width: 100%;
+  }
+
+  .teamCardWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamCardImage {
+    height: auto;
+    width: 90%;
+  }
+}
+.backButton {
+  position: fixed;
+  top: 140px; /* Adjust this value to shift the button downwards */
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(3, 168, 163);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensures the button is above all other content */
+}
+
+.backButton:hover {
+  background-color: rgb(2, 136, 131);
+}
+

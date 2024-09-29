@@ -1,0 +1,159 @@
+/* src/styles/FAQ.css */
+
+/* Navbar Container for Scroll Arrows */
+.navbar-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Adds space below the navbar */
+    padding: 0 50px; /* Added padding to accommodate scroll buttons */
+}
+
+/* Scroll Buttons */
+.scroll-button {
+    background-color: #6b6a6a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Vertically center the buttons */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    z-index: 2; /* Ensure they are above the buttons container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.scroll-button:hover {
+    opacity: 1;
+}
+
+.scroll-button.left {
+    left: 10px; /* Adjusted from -50px to 10px */
+}
+
+.scroll-button.right {
+    right: 10px; /* Adjusted from -50px to 10px */
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping by default */
+    gap: 10px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 5px 60px; /* Increased padding to accommodate scroll buttons */
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Light background for contrast */
+    scrollbar-width: 80%; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    position: relative; /* Ensure padding affects the content */
+}
+
+.buttons::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in WebKit browsers */
+}
+
+/* Button Styles */
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 100;
+    cursor: pointer;
+    outline: none;
+    flex: 0 0 auto; /* Prevents buttons from shrinking */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Selected and Unselected Button Styles */
+.selected {
+    background-color: #6b6a6a;
+    color: white;
+}
+
+.unselected {
+    background-color: #e9ecef;
+    color: #6a6a6a;
+}
+
+.unselected:hover {
+    background-color: #6a6a6a;
+    color: white;
+}
+
+/* FAQ Container Styles */
+.faq-container {
+    border: 3px solid #7bc9ce;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background color for better readability */
+    max-width: 800px; /* Set a max width for the box */
+    margin: 20px auto; /* Center the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading Styles */
+.heading {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: rgb(3, 168, 163);
+    text-align: center;
+}
+
+/* Question List Styles */
+.que {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.que ol {
+    padding-left: 20px;
+}
+
+.vSmallHeading {
+    font-weight: 500;
+    margin: 10px 0; 
+    font-size: medium;
+    color: black;
+}
+
+.answer {
+    margin-bottom: 15px; /* Adds space below each answer */
+    color: #555; /* Slightly darker color for the answer text */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .buttons {
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        justify-content: center;
+        overflow-x: visible; /* Disables horizontal scrolling */
+        padding: 5px 20px; /* Adjusted padding */
+    }
+
+    button {
+        flex: 1 1 45%; /* Adjusts button width for smaller screens */
+        min-width: 120px;
+    }
+
+    /* Optional: Remove scrollbar and adjust padding */
+    .buttons {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .scroll-button.left,
+    .scroll-button.right {
+        display: none; /* Hide scroll buttons on smaller screens */
+    }
+}

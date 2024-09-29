@@ -1,0 +1,80 @@
+/* Container for the entire page */
+.main-container {
+    padding: 20px;
+}
+
+/* Heading styles */
+.large-heading, .medium-heading, .small-heading {
+    color: rgb(3, 168, 163);
+    font-weight: 600;
+}
+
+.large-heading {
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.medium-heading {
+    font-size: 40px;
+    margin-top: 15px;
+    margin-bottom: -5px;
+}
+
+.small-heading {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* Report sections and rows */
+.report-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between boxes */
+    margin-bottom: 20px;
+}
+
+.report-section {
+    background-color:#4eccbf56;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: calc(30% - 20px); /* Ensures two boxes per row with gap */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+    border: 2px solid #4eccbf56; /* Turquoise border */
+}
+
+
+/* Subheading and link styles */
+.report-subheading {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.report-link {
+    display: block;
+    color: rgb(105, 104, 104);
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.report-link:hover {
+    text-decoration: underline;
+    color: rgb(53, 53, 53); /* Light grey for hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .report-row {
+        flex-direction: column;
+    }
+
+    .report-section {
+        min-width: 100%; /* Full width for single column layout */
+    }
+}
