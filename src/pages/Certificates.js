@@ -1,5 +1,3 @@
-// src/components/Certificates.js
-
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Certificates.css';
 
@@ -51,74 +49,81 @@ const Certificates = () => {
     }, []);
 
     return (
-        <div className='certificatesWrapper'>
+        <div className='certificatesPageWrapper'>
+            {/* Notification bar */}
+            <div className="notification-bar">
+                <marquee behavior="scroll" direction="left">
+                    The response time for your query is two working days. For more information, please contact the admin team.
+                </marquee>
+            </div>
+
             {/* Navbar */}
-            <div className='navbar-container'>
-                <div className='buttons' ref={buttonsRef}>
-                    <button 
-                        onClick={() => scrollToSection("degree")} 
-                        className={`nav-button ${activeSection === 'degree' ? 'active' : ''}`}
+            <div className='navbarWrapper'>
+                <div className='navButtons' ref={buttonsRef}>
+                    <button
+                        onClick={() => scrollToSection("degree")}
+                        className={`navItem ${activeSection === 'degree' ? 'active' : ''}`}
                         aria-label="Scroll to Degree & Provisional Certificate Section">
                         Degree & Provisional Certificate
                     </button>
-                    <button 
-                        onClick={() => scrollToSection("duplicate")} 
-                        className={`nav-button ${activeSection === 'duplicate' ? 'active' : ''}`}
+                    <button
+                        onClick={() => scrollToSection("duplicate")}
+                        className={`navItem ${activeSection === 'duplicate' ? 'active' : ''}`}
                         aria-label="Scroll to Duplicate Degree Section">
                         Duplicate Degree
                     </button>
-                    <button 
-                        onClick={() => scrollToSection("transcript")} 
-                        className={`nav-button ${activeSection === 'transcript' ? 'active' : ''}`}
+                    <button
+                        onClick={() => scrollToSection("transcript")}
+                        className={`navItem ${activeSection === 'transcript' ? 'active' : ''}`}
                         aria-label="Scroll to Transcript Section">
                         Transcript
                     </button>
-                    <button 
-                        onClick={() => scrollToSection("record")} 
-                        className={`nav-button ${activeSection === 'record' ? 'active' : ''}`}
+                    <button
+                        onClick={() => scrollToSection("record")}
+                        className={`navItem ${activeSection === 'record' ? 'active' : ''}`}
                         aria-label="Scroll to Sending Official Academic Record Section">
                         Sending Official Academic Record
                     </button>
-                    <button 
-                        onClick={() => scrollToSection("misc")} 
-                        className={`nav-button ${activeSection === 'misc' ? 'active' : ''}`}
+                    <button
+                        onClick={() => scrollToSection("misc")}
+                        className={`navItem ${activeSection === 'misc' ? 'active' : ''}`}
                         aria-label="Scroll to Other Documents Section">
                         Other Documents
                     </button>
-                    <button 
-                        onClick={() => scrollToSection("correction")} 
-                        className={`nav-button ${activeSection === 'correction' ? 'active' : ''}`}
+                    <button
+                        onClick={() => scrollToSection("correction")}
+                        className={`navItem ${activeSection === 'correction' ? 'active' : ''}`}
                         aria-label="Scroll to Name Change/Correction Section">
-                        Name Change/Correction
+                        Name Change
                     </button>
                 </div>
             </div>
 
             {/* Content Box */}
-            <div className='contentBox'>
+            <div className='contentSection'>
                 {/* Degree & Provisional Certificate Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="degree">
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="degree">
                     Degree & Provisional Certificate
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>What is a Degree Certificate?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is a Degree Certificate?</div>
+                            <div className='answerContent'>
                                 The <b>Degree Certificate</b> is an official document awarded to students upon the successful completion of all graduation requirements and necessary administrative formalities. This certificate is presented during the Convocation Ceremony and serves as proof of your academic achievement.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>What is a Provisional Degree Certificate?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is a Provisional Degree Certificate?</div>
+                            <div className='answerContent'>
                                 A <b>Provisional Degree Certificate</b> is issued to students who have fulfilled all academic and administrative requirements but have not yet received the official Degree Certificate. This provisional certificate assists students in completing job applications, higher education enrollments, or other formalities that require proof of degree completion before the official certificate is available.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>How to Obtain a Provisional Degree Certificate?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How to Obtain a Provisional Degree Certificate?</div>
+                            <div className='answerContent'>
                                 To obtain a Provisional Degree Certificate, follow these steps:
-                                <ol>
+                                <ol className="subList">
                                     <li>Ensure that you have completed all graduation requirements, including coursework, exams, and administrative formalities such as submitting the graduation checklist and obtaining No-Dues Clearance.</li>
                                     <li><b>Fill out the Google form</b> available on the Certificates section of the university website at least 15 days prior to the required date.</li>
                                     <li>Submit all necessary documents along with your request.</li>
@@ -131,38 +136,31 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>What is the Timeline for Issuing the Provisional Degree Certificate?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is the Timeline for Issuing the Provisional Degree Certificate?</div>
+                            <div className='answerContent'>
                                 The Provisional Degree Certificate is typically issued within <b>15 working days</b> after submitting the required form and completing all formalities.
                             </div>
                         </li>
                     </ol>
-                    <b>Contact Information:</b>
-                    <p>
-                        For any further assistance, please reach out to your respective administrative office at 
-                        <a href='mailto:admin-btech@iiitd.ac.in'>admin-btech@iiitd.ac.in</a>, 
-                        <a href='mailto:admin-mtech@iiitd.ac.in'>admin-mtech@iiitd.ac.in</a>, or 
-                        <a href='mailto:admin-phd@iiitd.ac.in'>admin-phd@iiitd.ac.in</a>.
-                    </p>
                 </div>
 
                 {/* Duplicate Degree Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="duplicate">
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="duplicate">
                     Duplicate Degree
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>What is a Duplicate Degree?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is a Duplicate Degree?</div>
+                            <div className='answerContent'>
                                 A <b>Duplicate Degree</b> is an official reissue of your Degree Certificate, provided in cases where the original certificate has been lost, damaged, or destroyed.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Under What Conditions Can I Apply for a Duplicate Degree?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Under What Conditions Can I Apply for a Duplicate Degree?</div>
+                            <div className='answerContent'>
                                 You can apply for a Duplicate Degree under the following conditions:
-                                <ol>
+                                <ol className="subList">
                                     <li>The original Degree Certificate is lost, stolen, or damaged beyond repair.</li>
                                     <li>You have notified the loss in a leading newspaper.</li>
                                     <li>You have filed an FIR (First Information Report) with the local police and have attached a copy of it with your application.</li>
@@ -175,10 +173,10 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>How Do I Initiate the Process for a Duplicate Degree?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How Do I Initiate the Process for a Duplicate Degree?</div>
+                            <div className='answerContent'>
                                 Follow these steps to initiate the process:
-                                <ol>
+                                <ol className="subList">
                                     <li>Prepare all the required documents as mentioned above.</li>
                                     <li>Submit the completed Google form available on the Certificates section of the university website.</li>
                                     <li>Ensure that you have attached all necessary documents and payment receipts.</li>
@@ -187,26 +185,26 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Are There Any Additional Charges for International Requests?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Are There Any Additional Charges for International Requests?</div>
+                            <div className='answerContent'>
                                 Yes, for international requests, the fee is higher to cover additional postage and handling costs. The fee is US $250. Ensure that you specify your international address when submitting the request.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Can I Expedite the Processing of My Duplicate Degree?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Can I Expedite the Processing of My Duplicate Degree?</div>
+                            <div className='answerContent'>
                                 Currently, there is no provision to expedite the processing of Duplicate Degree requests. The standard timeline of four weeks should be considered while planning.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>What Should I Do If I Receive an Incorrect Duplicate Degree?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What Should I Do If I Receive an Incorrect Duplicate Degree?</div>
+                            <div className='answerContent'>
                                 If you notice any discrepancies or errors in your Duplicate Degree Certificate, immediately contact the administrative office via email at <a href='mailto:admin-academics@iiitd.ac.in'>admin-academics@iiitd.ac.in</a> or <a href='mailto:admin-mtech@iiitd.ac.in'>admin-mtech@iiitd.ac.in</a>. Provide details of the errors and request for corrections. Additional verification documents may be required.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Can I Apply for a Duplicate Degree More Than Once?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Can I Apply for a Duplicate Degree More Than Once?</div>
+                            <div className='answerContent'>
                                 Yes, you can apply for a Duplicate Degree more than once if necessary. However, each application must meet all the required conditions and you must pay the applicable fees each time.
                             </div>
                         </li>
@@ -220,26 +218,26 @@ const Certificates = () => {
                 </div>
 
                 {/* Transcript Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="transcript">
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="transcript">
                     Transcript
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>What is a Transcript?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is a Transcript?</div>
+                            <div className='answerContent'>
                                 A <b>Transcript</b> is an official academic document detailing your semester-wise courses, grades received, SGPA, and CGPA. It serves as a comprehensive record of your academic performance throughout your program.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Who is Eligible to Receive a Transcript?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Who is Eligible to Receive a Transcript?</div>
+                            <div className='answerContent'>
                                 Transcripts are issued to both current students and alumni. For current students, the transcript indicates incomplete graduation requirements, while for alumni, it shows completed status.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>How Many Times Can I Request a Transcript?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How Many Times Can I Request a Transcript?</div>
+                            <div className='answerContent'>
                                 Transcripts can be requested multiple times as needed. There is no limit to the number of transcripts you can request.
                             </div>
                         </li>
@@ -247,7 +245,7 @@ const Certificates = () => {
                     <b>Process for Issuing Transcripts:</b>
                     <div className='currentStudents'>
                         <p><b><u>For Existing Students:</u></b></p>
-                        <ol>
+                        <ol className="subList">
                             <li>An official transcript can be issued after completing at least one semester and the publication of semester results.</li>
                             <li>Payment of Rs.50/- per copy is required.</li>
                             <li>Payment can be made <span style={{ color: "blue" }}>online</span> or offline in the accounts office.</li>
@@ -262,7 +260,7 @@ const Certificates = () => {
                     </div>
                     <div className='studentsAlumni'>
                         <p><b><u>For Alumni:</u></b></p>
-                        <ol>
+                        <ol className="subList">
                             <li>An official transcript with completed status is issued at the time of convocation along with the degree.</li>
                             <li>For a fresh transcript, alumni need to pay Rs.59/- [Rs.50/- transcript charge + Rs.9/- GST].</li>
                             <li>Payment can be made <span style={{ color: "blue" }}>online</span> or offline in the accounts office.</li>
@@ -286,22 +284,22 @@ const Certificates = () => {
                 </div>
 
                 {/* Sending Official Academic Record Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="record">
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="record">
                     Sending Official Academic Record through Institute
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>What is an Official Academic Record?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What is an Official Academic Record?</div>
+                            <div className='answerContent'>
                                 An <b>Official Academic Record</b> comprises official transcripts and other required documents that detail your academic performance and achievements during your tenure at the institute.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>How to Request Sending Official Academic Record to an Institution?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How to Request Sending Official Academic Record to an Institution?</div>
+                            <div className='answerContent'>
                                 To request sending your Official Academic Record to an external institution, follow these steps:
-                                <ol>
+                                <ol className="subList">
                                     <li>Submit a formal request through an official letter or email specifying the required records and the destination address.</li>
                                     <li>Ensure that all payment requirements for transcripts are fulfilled as mentioned in the Transcript section.</li>
                                     <li>Email your request along with necessary attachments to 
@@ -314,8 +312,8 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Are There Any Additional Charges for Sending Records Directly?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Are There Any Additional Charges for Sending Records Directly?</div>
+                            <div className='answerContent'>
                                 Yes, there are additional charges for postage and handling. Please refer to the Transcript section for details on the fees associated with sending transcripts internationally or domestically.
                             </div>
                         </li>
@@ -330,16 +328,16 @@ const Certificates = () => {
                 </div>
 
                 {/* Other Documents Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="misc">
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="misc">
                     Other Documents
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>How to Request Additional Official Documents?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How to Request Additional Official Documents?</div>
+                            <div className='answerContent'>
                                 For any official documents not covered in the above sections, follow these steps:
-                                <ol>
+                                <ol className="subList">
                                     <li>Email your request specifying the required document and its purpose to 
                                         <a href='mailto:admin-btech@iiitd.ac.in'>admin-btech@iiitd.ac.in</a>, 
                                         <a href='mailto:admin-mtech@iiitd.ac.in'>admin-mtech@iiitd.ac.in</a>, or 
@@ -352,10 +350,10 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>What Types of Documents Are Considered 'Other Documents'?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What Types of Documents Are Considered 'Other Documents'?</div>
+                            <div className='answerContent'>
                                 'Other Documents' include but are not limited to:
-                                <ol>
+                                <ol className="subList">
                                     <li>Affidavits</li>
                                     <li>No-Dues Certificates</li>
                                     <li>Bonafide Certificates</li>
@@ -365,8 +363,8 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>How Long Does It Take to Receive 'Other Documents'?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How Long Does It Take to Receive 'Other Documents'?</div>
+                            <div className='answerContent'>
                                 The processing time for 'Other Documents' depends on the complexity and type of the document requested. Typically, it ranges from two to four working days.
                             </div>
                         </li>
@@ -381,16 +379,16 @@ const Certificates = () => {
                 </div>
 
                 {/* Name Change/Correction Section */}
-                <div className={windowSize > 800 ? 'sectionHeading' : windowSize > 500 ? 'smallSectionHeading' : 'verySmallSectionHeading'} id="correction">
-                    Name Change/Correction
+                <div className={windowSize > 800 ? 'sectionTitle' : windowSize > 500 ? 'smallSectionTitle' : 'verySmallSectionTitle'} id="correction">
+                    Name Change
                 </div>
-                <div className={windowSize > 800 ? 'contentInfo' : windowSize > 500 ? 'smallContentInfo' : 'verySmallContentInfo'}>
-                    <ol>
+                <div className={windowSize > 800 ? 'sectionContent' : windowSize > 500 ? 'smallSectionContent' : 'verySmallSectionContent'}>
+                    <ol className="questionList">
                         <li>
-                            <div className='vSmallHeading'>How to Request a Name Change or Correction in Official Documents?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>How to Request a Name Change or Correction in Official Documents?</div>
+                            <div className='answerContent'>
                                 To request a name change or correction in your official documents, follow these steps:
-                                <ol>
+                                <ol className="subList">
                                     <li>Prepare a formal request letter detailing the required changes.</li>
                                     <li>Attach supporting documents such as a gazette notification or court order, if applicable.</li>
                                     <li>Submit the request along with the supporting documents to 
@@ -404,10 +402,10 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>What Supporting Documents Are Required for Name Change/Correction?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>What Supporting Documents Are Required for Name Change/Correction?</div>
+                            <div className='answerContent'>
                                 The following documents are typically required:
-                                <ol>
+                                <ol className="subList">
                                     <li>A gazette notification or court order certifying the name change.</li>
                                     <li>Photocopy of the original Degree Certificate or other relevant academic documents.</li>
                                     <li>Identification proof such as a passport or Aadhaar card.</li>
@@ -415,14 +413,14 @@ const Certificates = () => {
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Is There a Fee Associated with Name Change/Correction?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Is There a Fee Associated with Name Change/Correction?</div>
+                            <div className='answerContent'>
                                 Currently, there is no fee for requesting a name change or correction. However, if any additional administrative costs arise, you will be notified accordingly.
                             </div>
                         </li>
                         <li>
-                            <div className='vSmallHeading'>Can I Change My Name Multiple Times?</div>
-                            <div className='answer'>
+                            <div className='questionTitle'>Can I Change My Name Multiple Times?</div>
+                            <div className='answerContent'>
                                 Yes, you can request multiple name changes or corrections as needed. Each request must be accompanied by the necessary supporting documents.
                             </div>
                         </li>
@@ -438,7 +436,6 @@ const Certificates = () => {
             </div>
         </div>
     );
-
 };
 
 export default Certificates;

@@ -44,7 +44,7 @@ const Contact = () => {
                         <div className={size > 800 ? 'sub' : size > 500 ? 'subSmall' : 'vSubSmall'}>Location</div>
                         <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
                             Old Academic Building, 2nd Floor
-                            IIIT,
+                            IIITD,
                             Okhla Phase -III, New Delhi - 110020
                         </div>
                     </div>

@@ -107,7 +107,7 @@ const StudentPage = ({ setBeforeArrive, setAcademicTeam, setFAQ }) => {
                         <a className="student-projectLinks1" href="https://iiitd.ac.in/sites/default/files/docs/education/2024/2024-July-Dual%20Degree%20Regulations%20CB.pdf">
                             Dual Degree( CB )
                         </a>
-                        <a className="student-projectLinks1" style={{ cursor: 'pointer' }} onClick={() => navigate('/blank')}>
+                        <a className="student-projectLinks1" style={{ cursor: 'pointer' }} onClick={() => navigate('/btechtophd')}>
                             B.Tech. to Ph.D.
                         </a>
                         <a className="student-projectLinks1" style={{ cursor: 'pointer' }} onClick={() => navigate('/mtechtoPhd')}>

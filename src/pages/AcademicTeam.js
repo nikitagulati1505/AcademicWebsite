@@ -1,13 +1,8 @@
-// AcademicTeam.jsx
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate to handle navigation
 import Footer from '../components/Footer';
 import '../styles/academicTeam.css';
 import { ParallaxBanner } from 'react-scroll-parallax';
-
-// Import local images if necessary
-// import FacSports from '../assets/Fac_Sports-232.png';
-// import AmaanSS from '../assets/amaan_ss.jpg';
 
 const AcademicTeam = () => {
     const [size, setSize] = useState(window.innerWidth);
@@ -44,11 +39,10 @@ const AcademicTeam = () => {
     };
 
     const handleBackToHome = () => {
-        console.log('Back button clicked'); // Debugging: Check if function is called
-        navigate('/'); // Redirect to home page when clicked
+        navigate('/');
     };
 
-    // If using local images, uncomment the imports and update imgSrc accordingly
+    // Team Data
     const teamData = [
         {
             title: "DoAA",
@@ -71,11 +65,26 @@ const AcademicTeam = () => {
             ]
         },
         {
+            title: "UG and PG Chair",
+            members: [
+                {
+                    name: "SNEH SAURABH",
+                    designation: "PG Affairs",
+                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/faculty/sneh.jpg"
+                },
+                {
+                    name: "DEBAJYOTI BERA",
+                    designation: "UG Affairs",
+                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/faculty/debajyoti.jpg"
+                }
+            ]
+        },
+        {
             title: "Admin Academic",
             members: [
                 {
-                    name: "ASHUTOSH BRAHMA",
-                    designation: "Manager",
+                   name: "ASHUTOSH BRAHMA",
+                    designation: "Administrative Officer (Academics)",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/asutosh.jpg"
                 }
             ]
@@ -85,23 +94,28 @@ const AcademicTeam = () => {
             members: [
                 {
                     name: "NISHA NARWA",
-                    designation: "Assistant Manager",
+                    designation: "Assistant Administrative Officer(SG)",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/nisha.jpg"
                 },
                 {
                     name: "AAKASH GUPTA",
-                    designation: "Junior Manager",
+                    designation: "Junior Administrative Officer ",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/aakash.jpg"
                 },
                 {
                     name: "ASHISH AGGARWAL",
-                    designation: "Junior Manager",
+                    designation: "Junior Administrative Officer ",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/ashisha.jpg"
                 },
                 {
                     name: "AKANKSHA",
-                    designation: "Junior Manager",
+                    designation: "Junior Administrative Officer ",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/akanksha.jpg"
+                },
+                {
+                    name: "RAJU BISWAS",
+                    designation: "Junior Administrative Officer",
+                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/raju.jpg"
                 }
             ]
         },
@@ -110,13 +124,18 @@ const AcademicTeam = () => {
             members: [
                 {
                     name: "SANJANA SONI",
-                    designation: "Junior Manager",
+                    designation: "Junior Administrative Officer",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/sanjanas.jpg"
                 },
                 {
                     name: "MOHIT KUMAR",
-                    designation: "Junior Manager",
+                    designation: "Assistant Administrative Officer (IRD)",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/mohit.jpg"
+                },
+                {
+                    name: "PRACHI MUKHERJEE",
+                    designation: "Assistant Administrative Officer(SG)",
+                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/prachi.jpg"
                 }
             ]
         },
@@ -125,43 +144,13 @@ const AcademicTeam = () => {
             members: [
                 {
                     name: "ANSHU DUREJA",
-                    designation: "Deputy Manager",
+                    designation: "Deputy Administrative Officer (Academics)",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/anshu.jpg"
                 },
                 {
-                    name: "RAJU BISWAS",
-                    designation: "Junior Manager",
-                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/raju.jpg"
-                },
-                {
                     name: "SUDHANSHU TAMTA",
-                    designation: "Junior Manager",
+                    designation: "Junior Administrative Officer(SG)",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/sudhanshut.jpg"
-                }
-            ]
-        },
-        {
-            title: "Admin International Affairs",
-            members: [
-                {
-                    name: "PRACHI MUKHERJEE",
-                    designation: "Assistant Manager",
-                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/prachi.jpg"
-                }
-            ]
-        },
-        {
-            title: "Support Staff",
-            members: [
-                {
-                    name: "SAHIB",
-                    designation: "Executive Assistant",
-                    imgSrc: "Fac_Sports-232.png" // Update path if local
-                },
-                {
-                    name: "AMAAN",
-                    designation: "Executive Assistant",
-                    imgSrc: "amaan_ss.jpg" // Update path if local
                 }
             ]
         }
@@ -170,21 +159,72 @@ const AcademicTeam = () => {
     return (
         <div>
             {/* Round Back Button */}
-            <button className="backButton" onClick={handleBackToHome}>
-                &#8592;
-            </button>
+           
             <div className={getHeadingClass()}>Academic Team</div>
             <ParallaxBanner>
                 <div className="teamContainer">
                     <div className="teamBox">
-                        <div className="doaaRegistrarWrapper">
+                        {/* DoAA, UG Chair, and PG Chair Sections in One Row */}
+                        <div className="doaaUgPgChairWrapper">
                             <div className="teamSection doaaSection">
                                 <div className={getSubTeamClass()}>DoAA</div>
                                 <div className="teamCardWrapper">
                                     {teamData.slice(0, 1).map((section, sectionIndex) =>
                                         section.members.map((member, memberIndex) => (
                                             <div className={getCardClass()} key={`doaa-${sectionIndex}-${memberIndex}`}>
-                                                <img className="teamCardImage" src={member.imgSrc} alt={member.name} />
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                            <div className="teamSection ugChairSection">
+                                <div className={getSubTeamClass()}>UG Chair</div>
+                                <div className="teamCardWrapper">
+                                    {teamData.slice(2, 3).map((section, sectionIndex) =>
+                                        section.members.filter(member => member.designation === "UG Affairs").map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`ugChair-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                            <div className="teamSection pgChairSection">
+                                <div className={getSubTeamClass()}>PG Chair</div>
+                                <div className="teamCardWrapper">
+                                    {teamData.slice(2, 3).map((section, sectionIndex) =>
+                                        section.members.filter(member => member.designation === "PG Affairs").map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`pgChair-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Admin Academic and Registrar Sections in One Row */}
+                        <div className="adminAcademicRegistrarWrapper">
+                            <div className="teamSection adminAcademicSection">
+                                <div className={getSubTeamClass()}>Admin Academic</div>
+                                <div className="teamCardWrapper">
+                                    {teamData.slice(3, 4).map((section, sectionIndex) =>
+                                        section.members.map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`adminAcademic-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
                                                 <div className="teamCardInfo">
                                                     <div className="teamMemberName">{member.name}</div>
                                                     <div className="teamMemberRole">{member.designation}</div>
@@ -200,7 +240,7 @@ const AcademicTeam = () => {
                                     {teamData.slice(1, 2).map((section, sectionIndex) =>
                                         section.members.map((member, memberIndex) => (
                                             <div className={getCardClass()} key={`registrar-${sectionIndex}-${memberIndex}`}>
-                                                <img className="teamCardImage" src={member.imgSrc} alt={member.name} />
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
                                                 <div className="teamCardInfo">
                                                     <div className="teamMemberName">{member.name}</div>
                                                     <div className="teamMemberRole">{member.designation}</div>
@@ -211,28 +251,69 @@ const AcademicTeam = () => {
                                 </div>
                             </div>
                         </div>
-                        {teamData.slice(2).map((section, index) => (
-                            <div key={`section-${index}`} className="teamSection">
-                                <div className={getSubTeamClass()}>{section.title}</div>
+
+                        {/* Admin B.Tech Section */}
+                        <div className="adminBTechWrapper">
+                            <div className="teamSection adminBTechSection">
+                                <div className={getSubTeamClass()}>Admin B.Tech</div>
                                 <div className="teamCardWrapper">
-                                    {section.members.map((member, memberIndex) => (
-                                        <div className={getCardClass()} key={`member-${index}-${memberIndex}`}>
-                                            <img className="teamCardImage" src={member.imgSrc} alt={member.name} />
-                                            <div className="teamCardInfo">
-                                                <div className="teamMemberName">{member.name}</div>
-                                                <div className="teamMemberRole">{member.designation}</div>
+                                    {teamData.slice(4, 5).map((section, sectionIndex) =>
+                                        section.members.map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`adminBTech-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))
+                                    )}
                                 </div>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Admin M.Tech and Admin Ph.D Sections in One Row */}
+                        <div className="adminMTechPhdWrapper">
+                            <div className="teamSection adminMTechSection">
+                                <div className={getSubTeamClass()}>Admin M.Tech</div>
+                                <div className="teamCardWrapper">
+                                    {teamData.slice(5, 6).map((section, sectionIndex) =>
+                                        section.members.map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`adminMTech-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+
+                            <div className="teamSection adminPhdSection">
+                                <div className={getSubTeamClass()}>Admin Ph.D</div>
+                                <div className="teamCardWrapper">
+                                    {teamData.slice(6, 7).map((section, sectionIndex) =>
+                                        section.members.map((member, memberIndex) => (
+                                            <div className={getCardClass()} key={`adminPhd-${sectionIndex}-${memberIndex}`}>
+                                                <img className="teamCardImage" src={member.imgSrc} alt={`${member.name} - ${member.designation}`} />
+                                                <div className="teamCardInfo">
+                                                    <div className="teamMemberName">{member.name}</div>
+                                                    <div className="teamMemberRole">{member.designation}</div>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ParallaxBanner>
             <Footer />
         </div>
     );
-}
+};
 
 export default AcademicTeam;

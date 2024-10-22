@@ -1,6 +1,6 @@
 /* src/styles/projects.css */
 
-/* Existing CSS */
+/* Base Styles */
 
 body {
     overflow-x: hidden;
@@ -13,25 +13,26 @@ body {
 }
 
 .heading {
-    font-size: 2.5em;
+    font-size: clamp(1.5em, 2.5vw, 2.5em);
     font-weight: bold;
     margin: 3vh 0;
 }
 
 .smallHeading {
-    font-size: 2em;
+    font-size: clamp(1.2em, 2vw, 2em);
     font-weight: bold;
     margin: 3vh 0;
 }
 
 .vSmallHeading {
-    font-size: 1.5em;
+    font-size: clamp(1em, 1.5vw, 1.5em);
     font-weight: bold;
     margin: 3vh 0;
 }
 
 .content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
@@ -39,193 +40,90 @@ body {
     width: 80%;
 }
 
+.rows3, .singleImageContainer {
+    flex: 1 1 100%;
+}
+
 .rows3 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex: 1;
 }
 
 .section3 {
-    background-color: #808080; /* Set background color of the box */
+    background-color: #808080;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ensure it takes full width of the flex column */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 130px; /* Set a fixed height to ensure all boxes are equal-sized */
 }
 
 .subHeading3 {
-    font-size: 1.6em;
-    margin-bottom: 5px; /* Reduced margin-bottom to decrease the gap */
-    color: white; /* Set heading color to white */
+    font-size: clamp(1.2em, 2vw, 1.6em);
+    margin-bottom: 5px;
+    color: white;
 }
 
-.projectLinks3 {
-    display: block;
-    margin-top: 0; /* Removed margin-top to reduce gap further */
-    color: white; /* Set link color to white */
+.projectLinks3, .projectLinksx {
+    color: white;
     text-decoration: none;
 }
 
-.projectLinks3:hover {
+.projectLinks3:hover, .projectLinksx:hover {
     text-decoration: underline;
 }
 
-.projectLinksx {
-    display: block;
-    margin-top: 0; /* Removed margin-top to reduce gap further */
-    color: white; /* Set link color to white */
-    text-decoration: none;
-    margin-bottom: 30px;
-}
-
-.projectLinksx:hover {
-    text-decoration: underline;
-}
-
-/* New class for the single image */
 .singleImageContainer {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .singleImageContainer img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px; /* Adjust the max-width as per your design */
     height: auto;
-    margin-top: 30px;
-    margin-left: 30px;
-    border-radius: 10px; /* Optional: Add border radius to match the boxes */
-    box-shadow: 4px 4px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a slight elevation effect */
-}
-
-/* Responsive Enhancements */
-
-/* Mobile Devices (Max-Width: 600px) */
-@media (max-width: 600px) {
-    .heading {
-        font-size: 1.5em; /* Adjusted font size for mobile */
-        margin: 2vh 0;
-    }
-
-    .content {
-        flex-direction: column;
-        width: 95%;
-    }
-
-    .rows3 {
-        flex-direction: column;
-    }
-
-    .section3 {
-        height: auto; /* Allow height to adjust based on content */
-        padding: 15px;
-    }
-
-    .subHeading3 {
-        font-size: 1.4em;
-    }
-
-    .projectLinks3, .projectLinksx {
-        font-size: 0.9em;
-    }
-
-    .singleImageContainer {
-        margin-top: 20px;
-        margin-left: 0;
-    }
-
-    .singleImageContainer img {
-        margin-left: 0;
-        width: 100%;
-    }
-}
-
-/* Tablet Devices (601px to 992px) */
-@media (min-width: 601px) and (max-width: 992px) {
-    .heading {
-        font-size: 2em; /* Adjusted font size for tablet */
-        margin: 2.5vh 0;
-    }
-
-    .content {
-        flex-direction: row;
-        width: 90%;
-    }
-
-    .rows3 {
-        flex-direction: column;
-    }
-
-    .section3 {
-        height: 150px; /* Increased height for tablet */
-        padding: 12px;
-    }
-
-    .subHeading3 {
-        font-size: 1.5em;
-    }
-
-    .projectLinks3, .projectLinksx {
-        font-size: 1em;
-    }
-
-    .singleImageContainer {
-        margin-top: 25px;
-        margin-left: 20px;
-    }
-
-    .singleImageContainer img {
-        width: 80%; /* Adjusted width for tablet */
-    }
-}
-
-/* Desktop Devices (993px and above) */
-@media (min-width: 993px) {
-    .heading {
-        font-size: 2.5em; /* Original font size for desktop */
-        margin: 3vh 0;
-    }
-
-    .content {
-        flex-direction: row;
-        width: 80%;
-    }
-
-    .rows3 {
-        flex-direction: column;
-    }
-
-    .section3 {
-        height: 130px; /* Original height for desktop */
-        padding: 10px;
-    }
-
-    .subHeading3 {
-        font-size: 1.6em;
-    }
-
-    .projectLinks3, .projectLinksx {
-        font-size: 1em;
-    }
-
-    .singleImageContainer {
-        margin-top: 30px;
-        margin-left: 30px;
-    }
-
-    .singleImageContainer img {
-        width: 100%; /* Original width for desktop */
-    }
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Ensure images are responsive */
 img {
     max-width: 100%;
     height: auto;
+}
+
+/* Responsive Enhancements */
+
+/* Mobile Devices (Max-Width: 600px) */
+@media (max-width: 600px) {
+    .content {
+        width: 95%;
+    }
+}
+
+/* Tablet Devices (601px to 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+    .content {
+        width: 90%;
+    }
+
+    .rows3, .singleImageContainer {
+        flex: 1 1 50%;
+    }
+}
+
+/* Desktop Devices (993px and above) */
+@media (min-width: 993px) {
+    .content {
+        width: 80%;
+    }
+
+    .rows3, .singleImageContainer {
+        flex: 1 1 50%;
+    }
 }

@@ -1,11 +1,9 @@
-/* src/styles/FAQ.css */
-
 /* Navbar Container for Scroll Arrows */
 .navbar-container {
     position: relative;
-    display: flex;
+    display: flex; /* Corrected */
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 20px; /* Adds space below the navbar */
     padding: 0 50px; /* Added padding to accommodate scroll buttons */
 }
@@ -54,6 +52,7 @@
     scrollbar-width: 80%; /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     position: relative; /* Ensure padding affects the content */
+    text-align: left; /* Ensure left alignment */
 }
 
 .buttons::-webkit-scrollbar {
@@ -71,6 +70,7 @@ button {
     outline: none;
     flex: 0 0 auto; /* Prevents buttons from shrinking */
     transition: background-color 0.3s, color 0.3s;
+    text-align: left; /* Ensure text inside buttons is left-aligned */
 }
 
 /* Selected and Unselected Button Styles */
@@ -98,6 +98,7 @@ button {
     max-width: 800px; /* Set a max width for the box */
     margin: 20px auto; /* Center the box */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Ensure left alignment for all content inside */
 }
 
 /* Heading Styles */
@@ -106,7 +107,7 @@ button {
     font-weight: 600;
     margin-bottom: 10px;
     color: rgb(3, 168, 163);
-    text-align: center;
+    text-align: center; /* Center only the heading */
 }
 
 /* Question List Styles */
@@ -114,10 +115,11 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     text-align: left;
+    justify-content: left;
 }
 
 .que ol {
-    padding-left: 20px;
+    padding-left: 20px; /* Optional: Add padding for better indentation */
 }
 
 .vSmallHeading {
@@ -132,6 +134,14 @@ button {
     color: #555; /* Slightly darker color for the answer text */
 }
 
+/* Ensure all nested elements inside .que are left-aligned */
+.que li,
+.que li div,
+.que li ol,
+.que li ul {
+    text-align: left;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .buttons {
@@ -139,11 +149,13 @@ button {
         justify-content: center;
         overflow-x: visible; /* Disables horizontal scrolling */
         padding: 5px 20px; /* Adjusted padding */
+        text-align: left; /* Ensure left alignment */
     }
 
     button {
         flex: 1 1 45%; /* Adjusts button width for smaller screens */
         min-width: 120px;
+        text-align: left; /* Ensure text inside buttons is left-aligned */
     }
 
     /* Optional: Remove scrollbar and adjust padding */

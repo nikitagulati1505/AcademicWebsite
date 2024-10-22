@@ -77,16 +77,18 @@ const Home = () => {
                 <AdCarousel />
                 <ParallaxBanner
                     style={{ 
-                        height: size > 800 ? '350px' : size > 500 ? '250px' : '180px', 
+                        height: size > 800 ? '350px' : size > 500 ? '250px' : '560px', 
                         display: 'flex', 
                         alignItems: 'center', 
-                        marginTop: '0' 
+                        marginTop: '0' ,
+                        marginRight:'10px',
+                        textAlign: 'left',
                     }}
-                    layers={[{
+                    layers={[{        
                         image: '',
                         speed: -30,
                     }]}
-                >
+                > 
                     <div className={size > 800 ? "aboutUsContainer" : size > 500 ? "smallAbout" : "vSmallAbout"}>
                         <img src="/homepageiiitd.jpeg" alt="IIITD" />
                         <div className="textContainer">

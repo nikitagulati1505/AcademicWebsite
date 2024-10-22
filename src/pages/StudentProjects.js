@@ -25,7 +25,7 @@ const StudentProjects = () => {
                             <a className="projectLinks3" href="https://awards.iiitd.edu.in/" target="_blank" rel="noopener noreferrer">
                                 Awarded M.Tech. Thesis
                             </a>
-                            <a className="projectLinks3" href="https://academics.iiitd.edu.in/mtechthesis.html" target="_blank" rel="noopener noreferrer">
+                            <a className="projectLinks3" href="https://repository.iiitd.edu.in/xmlui/" target="_blank" rel="noopener noreferrer">
                                 All Thesis Repository
                             </a>
                         </div>

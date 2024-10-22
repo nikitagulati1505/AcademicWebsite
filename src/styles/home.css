@@ -388,7 +388,6 @@ a {
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Ensure it's on top */
-
 }
 
 /* Modal Content */
@@ -422,5 +421,83 @@ a {
 .modal-content p {
     font-size: 18px;
     background-color: #cdcbcbf4;
+}
 
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+    /* Ensure the image appears at the top */
+    .aboutUsContainer {
+        flex-direction: column;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        height: auto; /* Adjust height based on content */
+    }
+
+    .aboutUsContainer img {
+        width: 80%; /* Image takes full width */
+        max-height: 250px; /* Restrict max height for mobile */
+        object-fit: cover; /* Ensure image is cropped if necessary */
+        margin-bottom: 20px;
+    }
+
+    /* Ensure the text content is fully visible */
+    .aboutUsContainer .textContainer {
+        width: 100%;
+        margin-left: 0; /* Remove any margin to avoid clipping */
+    }
+
+    .aboutUsContainer .heading {
+        font-size: 24px; /* Adjust font size for mobile */
+    }
+
+    .aboutUsContainer .para {
+        font-size: 14px; /* Adjust text size for mobile */
+    }
+
+    /* Stack buttons vertically with fixed height */
+    .academic {
+        display: block; /* Stack buttons */
+        width: 100%;
+    }
+
+    .team .section {
+        width: 100%; /* Button full width */
+        height: auto; /* Adjust height based on content */
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        margin: 10px 0; /* Add margin between buttons */
+    }
+
+    .team img {
+        width: 40px; /* Resize button icons */
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    /* Ensure button text wraps properly */
+    .team .section p, 
+    .team .section a {
+        font-size: 14px; /* Adjust text size */
+        word-wrap: break-word; /* Wrap long text */
+        text-align: center;
+    }
+
+    /* Hide resource image on mobile */
+    .resource-container .image-container {
+        display: none;
+    }
+
+    /* Notification box full width on mobile */
+    .notification-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Wide buttons full width */
+    .wide-button {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 }

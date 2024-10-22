@@ -12,6 +12,7 @@ import Ugfaqs from './pages/Ugfaqs';
 import Faq from './pages/Faq';
 import AcademicTeam from './pages/AcademicTeam';
 import BeforeYouArrive from './pages/BeforeYouArrive';
+import BTechToPhD from './pages/Btechtophd';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           < Route path="/pgfaqs" element={<Faq />}/>
           <Route path="/certificates" element={<Certificates />}/>
           < Route path="/beforeYouArrive" element={<BeforeYouArrive/>}/>
+          < Route path="/btechtophd" element={<BTechToPhD/>}/>
         </Routes>
       </BrowserRouter>
     </div>

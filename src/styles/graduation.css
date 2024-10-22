@@ -1,0 +1,138 @@
+/* General Container Styling */
+.graduation-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Heading Styles */
+.graduation-heading {
+    font-size: 2.5em;
+    text-align: center;
+    color: rgb(3, 168, 163);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Wrapper for boxes */
+.checklist-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px; /* Same width as document-style layout */
+    margin: auto; /* Center the wrapper */
+}
+
+/* Checklist Box Styling */
+.checklist-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 48%; /* Keep the two boxes side by side */
+    transition: box-shadow 0.3s ease;
+    max-width: 100%; /* Ensure boxes don't overflow */
+}
+
+/* Hover effect for box shadow */
+.checklist-box:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Undergraduate Box */
+.undergraduate {
+    border-left: 5px solid rgb(3, 168, 163);
+}
+
+/* Postgraduate Box */
+.postgraduate {
+    border-left: 5px solid #2980b9;
+}
+
+/* Checklist Heading Styles */
+.checklist-heading {
+    font-size: 2em;
+    text-align: left;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Checklist Styles */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+
+.checklist li {
+    margin-bottom: 15px;
+}
+
+.checklist a {
+    text-decoration: none;
+    color: #2980b9;
+    transition: color 0.3s ease;
+}
+
+.checklist a:hover {
+    color: rgb(3, 168, 163);
+}
+
+/* Responsive Design */
+/* For screens smaller than 768px (phones and smaller tablets) */
+@media only screen and (max-width: 768px) {
+    .graduation-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .graduation-heading {
+        font-size: 2em;
+    }
+
+    .checklist-wrapper {
+        flex-direction: column;
+    }
+
+    .checklist-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .checklist-heading {
+        font-size: 1.5em;
+    }
+
+    .checklist {
+        font-size: 1em;
+    }
+}
+
+/* For screens between 768px and 1200px (small desktops and large tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .graduation-container {
+        padding: 20px;
+        max-width: 1000px;
+    }
+
+    .graduation-heading {
+        font-size: 2.2em;
+    }
+
+    .checklist-box {
+        width: 48%;
+    }
+
+    .checklist-heading {
+        font-size: 1.75em;
+    }
+
+    .checklist {
+        font-size: 1.05em;
+    }
+}

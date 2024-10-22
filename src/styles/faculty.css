@@ -1,89 +1,139 @@
-/* Existing Styles */
-
 /* Page Container */
-.page1{
-    height: 300px;
+.faculty-page {
+    height: auto;
+    padding: 20px;
 }
 
 /* Rows Container */
-.rows {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-around; 
-    margin: 10px; 
+.faculty-rows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
 }
 
 /* Faculty Boxes */
-.faculty, .smallFaculty, .vSmallFaculty {
-    width: 150px; 
-    height: 150px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+.faculty-box, .faculty-smallBox, .faculty-vSmallBox {
+    width: 180px; /* Adjusted size */
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #30353e9d;
     color: white;
-    border: 1px solid rgb(140, 205, 216); 
-    margin: 10px; 
+    border: 1px solid rgb(140, 205, 216);
+    margin: 10px;
     border-radius: 8px;
-    transition: box-shadow 0.3s ease; 
+    transition: box-shadow 0.3s ease;
 }
 
 /* Hover Effects */
-.faculty:hover, .smallFaculty:hover, .vSmallFaculty:hover {
-    transform: scale(1.05); 
+.faculty-box:hover, .faculty-smallBox:hover, .faculty-vSmallBox:hover {
+    transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    background-color: #00b1b7cf; 
+    background-color: #00b1b7cf;
 }
 
 /* Subheading Styles */
-.subHeading1 {
-    font-size: 16px; 
+.faculty-subheading {
+    font-size: 16px;
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Heading Styles */
+.heading {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.smallHeading {
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.vSmallHeading {
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+/* Responsive Heading Adjustments */
+@media (max-width: 820px) {
+    .heading {
+        font-size: 2em;
+    }
+
+    .smallHeading {
+        font-size: 1.8em;
+    }
+
+    .vSmallHeading {
+        font-size: 1.5em;
+    }
 }
 
 /* Responsive Styles for Tablets */
 @media (max-width: 820px) {
-    .faculty, .smallFaculty, .vSmallFaculty {
+    .faculty-box, .faculty-smallBox, .faculty-vSmallBox {
         width: 150px;
         height: 150px;
     }
 
-    .rows {
+    .faculty-rows {
         margin: 10px auto;
     }
 }
 
 /* Responsive Styles for Mobile Phones */
 @media (max-width: 500px) {
-    .faculty, .smallFaculty, .vSmallFaculty {
-        width: 120px;
-        height: 120px;
+    .faculty-page {
+        padding: 20px;
+        margin-top: 120px; /* Added top margin */
+        margin-bottom: -100px; /* Added bottom margin */
+        height: calc(100vh + 60px); /* Increased height to give space */
     }
 
-    .rows {
+    .faculty-box, .faculty-smallBox, .faculty-vSmallBox {
+        width: 130px;
+        height: 130px;
+    }
+
+    .faculty-rows {
         flex-direction: column;
         align-items: center;
     }
 
-    .subHeading1 {
+    .faculty-subheading {
         font-size: 14px;
-    }
-
-    .page1 {
-        padding: 10px;
     }
 }
 
-/* Clickable Section Cursor */
-.clickable-section {
-    cursor: pointer; /* Change cursor to pointer on hover */
+/* Link Styles */
+.faculty-link {
+    color: white; /* Default to white */
+    text-decoration: none;
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for the links */
+.faculty-link:hover {
+    color: black; /* Changes to black on hover */
 }
 
 /* Popup Modal Styles */
 
 /* Overlay */
-.modal-overlay {
+.faculty-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +148,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.faculty-modal-content {
     background-color: #ffffff; /* White background */
     color: #000000;            /* Black text */
     padding: 20px 30px;
@@ -110,8 +160,14 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* Larger Popup */
+.faculty-larger-popup {
+    width: 90%;
+    max-width: 600px; /* Larger max-width for bigger popup */
+}
+
 /* Close Button */
-.close-button {
+.faculty-close-button {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -122,15 +178,8 @@
     transition: color 0.3s;
 }
 
-.close-button:hover {
+.faculty-close-button:hover {
     color: #555555; /* Dark gray on hover for better visibility */
-}
-
-/* Optional: Style the popup message */
-.modal-content p {
-    font-size: 18px;
-    /* Removed background-color to maintain consistency */
-    margin-top: 20px;
 }
 
 /* Fade-in Animation for Modal */

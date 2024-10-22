@@ -1,0 +1,152 @@
+/* General Container Styling */
+.examination-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px;  /* Matching the width of beforeArrive */
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+.examination-heading {
+    font-size: 2.5em;
+    text-align: center;
+    color: rgb(3, 168, 163);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Subheading Styles */
+.examination-subheading {
+    font-size: 2em;
+    text-align: center;
+    color: #2980b9;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Text Styles */
+.examination-text {
+    text-align: left;
+    color: #555;
+    font-size: 1.125em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 900px;  /* Ensuring content width consistency */
+    margin: auto;
+    word-wrap: break-word;    /* Enable text wrapping */
+    overflow-wrap: break-word; /* Break words if too long */
+}
+
+/* List Styling - Left Aligned */
+.examination-list {
+    margin-left: 0;
+    padding-left: 40px;
+    list-style: decimal;
+    color: #555;
+    font-size: 1.125em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+    max-width: 900px;  /* Ensuring content width consistency */
+    margin: auto;
+    word-wrap: break-word;    /* Enable text wrapping */
+    overflow-wrap: break-word; /* Break words if too long */
+}
+
+/* Box for Plagiarism Section */
+.plagiarism-box {
+    background-color: rgba(3, 168, 163, 0.1); /* Lighter color based on heading */
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;  /* Ensuring content width consistency */
+    margin-left: 130px;
+    word-wrap: break-word;    /* Enable text wrapping */
+    overflow-wrap: break-word; /* Break words if too long */
+}
+
+/* Link Styling */
+.examination-link-text {
+    font-size: 1.125em;
+    color: #2980b9;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    max-width: 900px;  /* Ensuring content width consistency */
+    margin: auto;
+    word-wrap: break-word;    /* Enable text wrapping */
+    overflow-wrap: break-word; /* Break words if too long */
+}
+
+.examination-link-text:hover {
+    color: rgba(1, 15, 14, 0.968);
+}
+
+.examination-link {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Responsive Design */
+/* For screens smaller than 768px (phones and smaller tablets) */
+@media only screen and (max-width: 768px) {
+    .examination-container {
+        padding: 15px;
+        max-width: 100%; /* Make it fill the screen on small devices */
+    }
+
+    .examination-heading {
+        font-size: 2em; /* Slightly smaller heading for phones */
+    }
+
+    .examination-subheading {
+        font-size: 1.5em; /* Adjust subheading size for phones */
+    }
+
+    .examination-text, .examination-list, .plagiarism-box, .examination-link-text {
+        font-size: 1em; /* Slightly smaller text for readability on smaller screens */
+        padding: 0 10px; /* Add some padding for better readability */
+        max-width: 100%; /* Ensuring it fits within smaller screens */
+    }
+
+    .plagiarism-box {
+        margin-left: 0; /* Align the box properly for small screens */
+        margin-right: 0; /* No margins on sides */
+        padding: 15px;
+        max-width: 100%; /* Make the plagiarism box full width */
+    }
+}
+
+/* For screens between 768px and 1200px (small desktops and large tablets) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .examination-container {
+        padding: 20px;
+        max-width: 1000px; /* Adjust container width for medium screens */
+    }
+
+    .examination-heading {
+        font-size: 2.2em; /* Adjust heading size */
+    }
+
+    .examination-subheading {
+        font-size: 1.75em; /* Adjust subheading size */
+    }
+
+    .examination-text {
+        font-size: 1.05em; /* Slightly smaller text */
+    }
+
+    .plagiarism-box {
+        margin-left: 50px; /* Adjust margin for medium screens */
+        max-width: 850px;
+    }
+}
