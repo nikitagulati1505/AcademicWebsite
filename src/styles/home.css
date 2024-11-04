@@ -1,87 +1,85 @@
+/* home.css */
+
 body {
     overflow-x: hidden;
 }
 
-.aboutUsContainer {
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-    padding-left: 15vw;
-    padding-right: 15vw;
-    position: relative;
-    height: 60vh;
-    display: flex;
-    background-color: rgba(3, 168, 163, 0.153);
-    justify-content: space-between;
-    padding: 0;
+/* Universal Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-.para {
-    margin-left: 20px;
-}
-
-.aboutUsContainer .heading {
-    font-size: 30px;
-    margin-left: 20px;
-    margin-top: 50px;
-    color: #00B1B7;
-}
-
-.aboutUsContainer .para {
-    font-size: 15px;
-    color: black;
-    text-align: justify;
-    margin-right: 30px;
-    margin-top: 10px;
-}
-
-.aboutUsContainer img {
-    width: 50%;
-    height: auto; /* Ensure image maintains aspect ratio */
-    margin: 0;
-    padding: 0;
-}
-
-.aboutUsContainer div.textContainer {
-    width: 50%;
-    margin-left: 20px;
-}
-
-.smallAbout {
-    padding: 0;
-}
-
-.smallAbout img {
-    width: 100%;
-    height: auto; /* Ensure image maintains aspect ratio */
-    margin: 0;
-    padding: 0;
-}
-
-.smallAbout div.textContainer {
-    width: 100%;
-    margin-left: 20px;
-}
-
-.vSmallAbout {
-    padding: 0;
-}
-
-.vSmallAbout img {
-    width: 100%;
-    height: auto; /* Ensure image maintains aspect ratio */
-    margin: 0;
-    padding: 0;
-}
-
-.vSmallAbout div.textContainer {
-    width: 100%;
-    margin-left: 20px;
+/* Main container to center content and limit max width */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 .homepage {
     background-color: rgb(239, 239, 240);
 }
 
+/* Updated About Us Container with Adjusted Image Size and Softer Background Color */
+.aboutUsContainer {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    background: linear-gradient(135deg, rgba(3, 128, 124, 0.436), rgba(0, 137, 143, 0.7));
+    /* Adjusted gradient to softer colors */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.aboutUsContainer .heading {
+    font-size: 30px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.aboutUsContainer .para {
+    font-size: 16px;
+    color: #f0f0f0;
+    text-align: justify;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Adjusted image size */
+.aboutUsContainer .textContainer {
+    width: 55%; /* Increased width to accommodate more text space */
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Made image smaller */
+.aboutUsContainer img {
+    width: 40%; /* Reduced from 50% to 40% */
+    height: auto;
+    margin: 0;
+    padding: 0;
+    animation: zoomIn 2s ease-in-out;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+/* Rest of your existing styles */
+
+/* Academics Section */
 .academics {
     padding-top: 3vh;
     padding-bottom: 4vh;
@@ -90,11 +88,20 @@ body {
     align-items: center;
 }
 
+/* Blue Buttons Styling */
 .academic {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 2vh;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
@@ -105,19 +112,21 @@ body {
     width: 150px;
     height: 120px;
     padding: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 1vh;
     text-align: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover effect for blue buttons */
 .team .section:hover {
     background-color: #00B1B7;
+    transform: translateY(-5px);
 }
 
 .team img {
@@ -137,260 +146,170 @@ body {
     }
 }
 
-.smallTeam .section {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    margin-left: 15vw;
-    width: 30vw;
-    color: white;
+@media (max-width: 600px) {
+    .team .section {
+        width: 45%;
+    }
 }
 
-.smallTeam .section img {
-    max-width: 40%;
-    margin-bottom: 2vh;
+@media (max-width: 400px) {
+    .team .section {
+        width: 100%;
+    }
 }
 
-.vSmallTeam .section {
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    font-size: 12px;
-    width: 30vw;
-    margin-left: 15vw;
-    color: white;
-}
-
-.vSmallTeam .section img {
-    max-width: 30%;
-    margin-bottom: 2vh;
-}
-
-.resource {
-    background-color: rgb(239, 239, 240);
-    padding-top: 3vh;
-    padding-bottom: 4vh;
+/* Wide Buttons Styling */
+.button-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: stretch; /* Ensures both children stretch to the same height */
-    margin-top: 2vh;
-    padding-left: 6vw;
-    padding-right: 6vw;
-}
-
-.smallResource {
-    font-size: 18px;
-}
-
-.smallResource .subHeading {
-    font-size: 23px;
-    font-weight: 600;
-    color: rgb(3, 168, 163);
-}
-
-.vSmallResource {
-    padding-left: 20vw;
-}
-
-.vSmallResource .section {
-    width: 60vw;
-    font-size: 13px;
-}
-
-.vSmallResource .subHeading {
-    font-size: 18px;
-    font-weight: 600;
-    color: rgb(3, 168, 163);
-}
-
-.tabHead {
-    padding-top: 2vh;
-    color: white;
-}
-
-.links {
-    color: aliceblue;
-    text-decoration: none;
-}
-
-a {
-    color: aliceblue;
-}
-
-.projectLinks {
-    display: flex;
-    justify-content: space-evenly;
-    color: aliceblue;
-    text-decoration: none;
-}
-
-.section {
-    background-color: #333;
-    color: #00B1B7;
-    padding: 20px;
-    margin: 10px 0;
-    text-align: left;
-}
-
-.subHeading {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.links a {
-    color: #ffffff;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-.links a:hover {
-    text-decoration: underline;
-}
-
-@media (min-width: 1000px) {
-    .resource {
-        flex-direction: column;
-    }
-}
-
-@media (min-width: 700px) and (max-width: 999px) {
-    .resource {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 699px) {
-    .resource {
-        flex-direction: column;
-    }
-}
-
-.smallResource,
-.vSmallResource {
-    display: block;
-}
-
-.content-container {
-    flex: 1;
-}
-
-.image-container {
-    width: 45%; /* Adjusted to match notification box */
-    display: flex;
-    align-items: center; /* Centered vertically */
-    justify-content: center;
-}
-
-.resource-image {
-    max-width: 100%;
-    height: auto; /* Ensure image maintains aspect ratio */
-    border-radius: 5%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Corrected box-shadow syntax */
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .wide-button {
-    width: 97%;
-    height: auto; /* Changed from 10% to auto for better responsiveness */
-    margin-left: 20px;
-    background-color: #333; /* Default button color */
-    color: white; /* Default text color */
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.wide-button:hover {
-    background-color: #00B1B7; /* Change to desired color on hover */
-    color: white; /* Ensure text remains readable on hover */
-}
-
-.notification-box {
-    width: 55%;
-    background-color: #00B1B7; /* Blue color */
-    color: white; /* White text */
-    padding: 20px; /* Reduced padding for better fit */
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Corrected box-shadow syntax */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
-    overflow: hidden; /* Hide the overflowing content */
-    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover effect for wide buttons */
+.wide-button:hover {
+    background-color: #00B1B7;
+    transform: translateY(-5px);
+}
+
+.wide-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.projectLinks {
+    color: white;
+    text-decoration: none;
+}
+
+.projectLinks:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+    .wide-button {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .wide-button {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .button-container {
+        padding: 0 10px;
+    }
+}
+
+/* Rest of your existing styles */
+
+/* Resource Container */
 .resource-container {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Ensures both children stretch to the same height */
-    padding-left: 6vw;
-    padding-right: 6vw;
-    padding-top: 2vh;
+    align-items: stretch;
+    margin-top: 2vh;
+    padding: 2vh 6vw;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image-container {
-    width: 45%; /* Adjusted to match notification box */
+    width: 45%;
     display: flex;
-    align-items: center; /* Centered vertically */
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .resource-image {
-    max-width: 100%;
-    height: auto; /* Ensure image maintains aspect ratio */
-    border-radius: 5%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Corrected box-shadow syntax */
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 5s ease;
 }
 
-/* New Styles for Vertical Marquee */
+/* Slow zoom animation for image */
+.resource-image:hover {
+    transform: scale(1.1);
+}
 
-/* Container for the vertical marquee */
+/* Notification Box */
+.notification-box {
+    width: 55%;
+    background-color: #00B1B7;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
 .vertical-marquee {
     height: 100%;
     overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Individual marquee items */
 .marquee-content {
     display: block;
     width: 100%;
-    /* Adjust the animation duration as needed */
     animation: scroll-up 10s linear infinite;
-    font-size: 16px; /* Adjust font size as needed */
-    margin: 10px 0; /* Space between notifications */
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-/* Keyframes for vertical scrolling */
 @keyframes scroll-up {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(-100%);
-    }
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
 }
 
 /* Popup Modal Styles */
-
-/* Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(108, 107, 107, 0.623); /* Semi-transparent background */
+    background-color: rgba(108, 107, 107, 0.623);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure it's on top */
+    z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
     padding: 20px 30px;
     border-radius: 8px;
@@ -399,16 +318,22 @@ a {
     max-width: 400px;
     text-align: center;
     color: azure;
+    background-color: #333;
+    animation: fadeInModal 0.5s ease;
 }
 
-/* Close Button */
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .close-button {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    color: #180202;
+    color: #fff;
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -417,87 +342,93 @@ a {
     color: #878585;
 }
 
-/* Optional: Style the popup message */
 .modal-content p {
     font-size: 18px;
     background-color: #cdcbcbf4;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
 }
 
-/* Mobile-specific styles */
-@media (max-width: 600px) {
-    /* Ensure the image appears at the top */
+/* Media Queries for Resource Container */
+@media (max-width: 1199px) {
     .aboutUsContainer {
         flex-direction: column;
-        padding-left: 5vw;
-        padding-right: 5vw;
-        height: auto; /* Adjust height based on content */
+        align-items: center;
+        padding: 20px;
     }
 
-    .aboutUsContainer img {
-        width: 80%; /* Image takes full width */
-        max-height: 250px; /* Restrict max height for mobile */
-        object-fit: cover; /* Ensure image is cropped if necessary */
-        margin-bottom: 20px;
-    }
-
-    /* Ensure the text content is fully visible */
+    .aboutUsContainer img,
     .aboutUsContainer .textContainer {
         width: 100%;
-        margin-left: 0; /* Remove any margin to avoid clipping */
     }
 
-    .aboutUsContainer .heading {
-        font-size: 24px; /* Adjust font size for mobile */
-    }
-
-    .aboutUsContainer .para {
-        font-size: 14px; /* Adjust text size for mobile */
-    }
-
-    /* Stack buttons vertically with fixed height */
     .academic {
-        display: block; /* Stack buttons */
-        width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .team .section {
-        width: 100%; /* Button full width */
-        height: auto; /* Adjust height based on content */
-        padding: 10px;
-        box-sizing: border-box;
-        text-align: center;
-        margin: 10px 0; /* Add margin between buttons */
+    .resource-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .team img {
-        width: 40px; /* Resize button icons */
-        height: 40px;
-        margin-bottom: 5px;
-    }
-
-    /* Ensure button text wraps properly */
-    .team .section p, 
-    .team .section a {
-        font-size: 14px; /* Adjust text size */
-        word-wrap: break-word; /* Wrap long text */
-        text-align: center;
-    }
-
-    /* Hide resource image on mobile */
-    .resource-container .image-container {
-        display: none;
-    }
-
-    /* Notification box full width on mobile */
-    .notification-box {
+    .notification-box,
+    .image-container {
         width: 100%;
         margin: 10px 0;
     }
 
-    /* Wide buttons full width */
-    .wide-button {
+    .notification-box {
+        margin-top: 20px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+    .team .section {
+        width: 45%;
+    }
+
+    .aboutUsContainer .heading {
+        font-size: 24px;
+    }
+
+    .aboutUsContainer .para {
+        font-size: 14px;
+    }
+
+    .resource-container {
+        padding: 0 20px;
+    }
+
+    .notification-box {
         width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .team .section {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .team img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    .team .section p,
+    .team .section a {
+        font-size: 14px;
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .wide-button {
+        flex: 1 1 100%;
+        margin: 10px 0;
     }
 }

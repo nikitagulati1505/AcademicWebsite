@@ -1,9 +1,12 @@
-/* General styles for large screens */
+/* Student.css */
+
+/* General styles */
 .student-page {
-    background-color: #7db4b796;
+    /* Set background to a light blackish shade */
+    background-color: rgba(3, 128, 124, 0.436);
     padding: 20px;
-    min-height: 100vh; /* Ensure full page height */
-    width: 100%; /* Full viewport width */
+    min-height: auto; /* Changed from 100vh to auto */
+    width: 100%;
 }
 
 /* Flex container */
@@ -11,53 +14,62 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: stretch;
 }
 
 /* Box styles */
 .student-box {
-    background-color: #004F4F; /* Green background */
-    width: 27%; /* Default width for large screens */
-    height: 230px;
-    margin: 10px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 30%;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     position: relative;
-}
-
-/* Overlay styles */
-.student-overlay-top-leftx,
-.student-overlay-bottom-rightx {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    background-color: #00b1b75f;
-    pointer-events: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    transition: clip-path 0.5s ease, opacity 0.5s ease;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Hover effect on image container */
-.student-image-container:hover .student-overlay-top-leftx {
-    opacity: 1;
-    clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+/* Staggered animation delays */
+.student-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.student-box:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.student-box:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.student-box:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.student-box:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.student-box:nth-child(6) {
+    animation-delay: 0.6s;
 }
 
-.student-image-container:hover .student-overlay-bottom-rightx {
-    opacity: 1;
-    clip-path: polygon(0 100%, 100% 100%, 100% 0, 100% 0);
+/* Keyframe animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
-/* Adjust hover effects */
-.student-image-container:hover .student-overlay-bottom-rightx {
-    clip-path: polygon(0 100%, 100% 100%, 100% 0, 100% 0);
+/* Hover effect */
+.student-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
 
 /* Heading styles */
@@ -65,106 +77,89 @@
     font-size: 2.5em;
     font-weight: 600;
     margin-top: 20px;
-    color: rgb(3, 168, 163);
-}
-
-.student-smallHeading {
-    font-size: 30px;
-    font-weight: 600;
-    color: rgb(3, 168, 163);
-}
-
-.student-vSmallHeading {
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(3, 168, 163);
+    color: rgb(4, 145, 140);
+    text-align: center;
 }
 
 /* Subheading styles */
 .student-subHeading {
-    font-size: 25px;
-    font-weight: 450;
-    color: aliceblue;
-    padding-bottom: 3vh;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 15px;
 }
 
 /* Links inside boxes */
 .student-projectLinks1 {
-    display: flex;
-    align-items: center;
-    color: white;
-    margin: 3px 0;
+    color: black;
+    margin: 10px 0;
     text-decoration: none;
-    font-size: 1.0em;
+    font-size: 1em;
     cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .student-projectLinks1:hover {
+    color: #555;
     text-decoration: underline;
+}
+
+/* Ensure boxes have equal height */
+.student-boxContainer > .student-box {
+    flex: 1 1 30%;
 }
 
 /* Medium screens (tablets) */
 @media (max-width: 1024px) {
     .student-box {
-        width: 45%; /* Two boxes per row */
-        height: 220px; /* Slight height adjustment */
+        width: 45%;
     }
 
-    .student-page {
-        font-size: 14px;
-        padding: 15px; /* Adjust padding */
+    .student-heading {
+        font-size: 2em;
     }
 }
 
 /* Small screens (mobile) */
 @media (max-width: 768px) {
     .student-box {
-        width: 100%; /* Full width for single-column layout */
-        height: auto; /* Auto height to fit content */
-        margin: 10px 0; /* Stack boxes vertically */
-    }
-
-    .student-page {
-        padding: 10px;
+        width: 100%;
+        margin: 10px 0;
     }
 
     .student-boxContainer {
-        display: block; /* Ensure boxes stack vertically */
+        flex-direction: column;
+        align-items: center;
     }
 
     .student-heading {
-        font-size: 24px; /* Smaller heading */
+        font-size: 1.8em;
     }
 
     .student-subHeading {
-        font-size: 18px; /* Smaller subheading */
+        font-size: 1.4em;
     }
 
     .student-projectLinks1 {
-        font-size: 0.9em; /* Adjust link size */
+        font-size: 1em;
     }
 }
 
-/* Extra small screens (small mobile) */
+/* Extra small screens */
 @media (max-width: 500px) {
-    .student-box {
-        width: 100%; /* Full width */
-        padding: 3px; /* Less padding */
+    .student-heading {
+        font-size: 1.5em;
     }
 
     .student-subHeading {
-        font-size: 16px; /* Smaller subheading */
+        font-size: 1.2em;
     }
 
     .student-projectLinks1 {
-        font-size: 0.8em; /* Smaller font for links */
+        font-size: 0.95em;
     }
 
     .student-page {
-        padding: 5px; /* Further reduce padding */
-    }
-
-    .student-boxContainer {
-        display: block; /* Stacked vertically */
+        padding: 15px;
     }
 }
