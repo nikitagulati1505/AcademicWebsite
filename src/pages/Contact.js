@@ -17,14 +17,16 @@ const Contact = () => {
     };
 
     return (
-        <div className="contactContainer page" style={{ backgroundColor: "rgb(239, 239, 240)" }}>
+        <div className="contactWrapper contactPage" style={{ backgroundColor: "rgb(239, 239, 240)" }}>
             <div className={size > 800 ? 'heading' : size > 500 ? 'smallHeading' : 'vSmallHeading'}>
                 Contact Academic Department
             </div>
-            <div className={size > 800 ? 'contact' : 'contactSmall'}>
-                <div className={size > 800 ? 'contactForm' : 'contactFormSmall'}>
-                    <div className={size > 800 ? 'sub' : size > 500 ? 'subSmall' : 'vSubSmall'}>Enquire Us</div>
-                    <form className="form" onSubmit={handleSubmit}>
+            <div className={size > 800 ? 'contactSection' : 'contactSectionSmall'}>
+                <div className={size > 800 ? 'contactFormContainer' : 'contactFormContainerSmall'}>
+                    <div className={size > 800 ? 'subTitle' : size > 500 ? 'subTitleSmall' : 'subTitleVSmall'}>
+                        Enquire Us
+                    </div>
+                    <form className="contactForm" onSubmit={handleSubmit}>
                         <input type="text" name="name" id="name" placeholder='Enter Your Name' />
                         <input type="text" name="email" id="email" placeholder="Enter Your Email" />
                         <input type="text" name="subject" id="subject" placeholder='Enter Subject' />
@@ -35,40 +37,42 @@ const Contact = () => {
                             <option name="mtech" id="mtech">M.Tech</option>
                             <option name="phd" id="phd">PhD</option>
                         </select>
-                        <textarea className='query' placeholder="Enter your query here"></textarea>
-                        <button className='submit'>SEND</button>
+                        <textarea className='contactQuery' placeholder="Enter your query here"></textarea>
+                        <button className='submitButton'>SEND</button>
                     </form>
                 </div>
-                <div className={size > 800 ? 'contactInfo' : 'contactInfoSmall'}>
+                <div className={size > 800 ? 'contactInfoContainer' : 'contactInfoContainerSmall'}>
                     <div>
-                        <div className={size > 800 ? 'sub' : size > 500 ? 'subSmall' : 'vSubSmall'}>Location</div>
-                        <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
-                            Old Academic Building, 2nd Floor
-                            IIITD,
+                        <div className={size > 800 ? 'subTitle' : size > 500 ? 'subTitleSmall' : 'subTitleVSmall'}>
+                            Location
+                        </div>
+                        <div className={size > 800 ? "infoContent" : size > 500 ? "infoContentSmall" : 'infoContentVSmall'}>
+                            Old Academic Building, 2nd Floor<br />
+                            IIITD,<br />
                             Okhla Phase -III, New Delhi - 110020
                         </div>
                     </div>
                    
                     <div>
-                        <div className={size > 800 ? 'sub' : size > 500 ? 'subSmall' : 'vSubSmall'}>Mail Info</div>
-                        <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
-                            admin-academics@iiitd.ac.in</div>
-                            
-                            <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
-
-                            B.Tech.: admin-btech@iiitd.ac.in</div>
-                            <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
-
-                            M.Tech.: admin-mtech@iiitd.ac.in</div>
-                            <div className={size > 800 ? "content" : size > 500 ? "contentSmall" : 'vContentSmall'}>
-
-                            Ph.D: admin-phd@iiitd.ac.in</div>
-                            
+                        <div className={size > 800 ? 'subTitle' : size > 500 ? 'subTitleSmall' : 'subTitleVSmall'}>
+                            Mail Info
+                        </div>
+                        <div className={size > 800 ? "infoContent" : size > 500 ? "infoContentSmall" : 'infoContentVSmall'}>
+                            admin-academics@iiitd.ac.in
+                        </div>
+                        <div className={size > 800 ? "infoContent" : size > 500 ? "infoContentSmall" : 'infoContentVSmall'}>
+                            B.Tech.: admin-btech@iiitd.ac.in
+                        </div>
+                        <div className={size > 800 ? "infoContent" : size > 500 ? "infoContentSmall" : 'infoContentVSmall'}>
+                            M.Tech.: admin-mtech@iiitd.ac.in
+                        </div>
+                        <div className={size > 800 ? "infoContent" : size > 500 ? "infoContentSmall" : 'infoContentVSmall'}>
+                            Ph.D: admin-phd@iiitd.ac.in
                         </div>
                     </div>
                 </div>
             </div>
-        
+        </div>
     );
 };
 

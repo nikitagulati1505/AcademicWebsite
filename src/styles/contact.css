@@ -1,4 +1,12 @@
-.contact {
+.contactWrapper {
+    /* If there are specific styles for contactWrapper, add them here */
+}
+
+.contactPage {
+    /* If there are specific styles for contactPage, add them here */
+}
+
+.contactSection {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -6,14 +14,14 @@
     padding: 20px;
 }
 
-.contactSmall {
+.contactSectionSmall {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
 }
 
-.contactForm, .contactInfo {
+.contactFormContainer, .contactInfoContainer {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -23,7 +31,7 @@
     margin: 10px;
 }
 
-.contactFormSmall, .contactInfoSmall {
+.contactFormContainerSmall, .contactInfoContainerSmall {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -32,23 +40,26 @@
     margin: 10px;
 }
 
-.form {
+.contactForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.form input, .form select, .form textarea, .form button {
+.contactForm input,
+.contactForm select,
+.contactForm textarea,
+.contactForm button {
     padding: 10px;
     font-size: 1em;
 }
 
-.query {
+.contactQuery {
     height: 100px;
     resize: none;
 }
 
-.submit {
+.submitButton {
     background-color: #03a8a3;
     color: white;
     border: none;
@@ -58,29 +69,34 @@
     transition: background-color 0.3s;
 }
 
-.submit:hover {
+.submitButton:hover {
     background-color: #444;
 }
 
-.sub, .subSmall, .vSubSmall {
+.subTitle,
+.subTitleSmall,
+.subTitleVSmall {
     font-size: 1.5em;
     margin-bottom: 10px;
     text-align: center;
     color: #000;  /* Adjusting text color for better visibility */
 }
 
-.content, .contentSmall, .vContentSmall {
+.infoContent,
+.infoContentSmall,
+.infoContentVSmall {
     font-size: 1em;
     margin-bottom: 10px;
     text-align: center;
     color: #555555;  /* Ensuring text is visible */
 }
 
-.contentSmall, .vContentSmall {
+.infoContentSmall,
+.infoContentVSmall {
     color: #555555;  /* Ensuring text is visible */
 }
 
-.contactImage {
+.contactImageNew {
     width: 50%;
     max-width: 400px; /* Adjust this value as needed */
     margin: 2px auto;

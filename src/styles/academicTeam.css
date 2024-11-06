@@ -1,7 +1,43 @@
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
 }
 
+/* Heading Styles */
+.mainHeading {
+  font-size: 3em;
+  text-align: center;
+  color: #0398a3;
+  margin: 30px 0;
+  font-weight: 700;
+}
+
+.subTeamHeadingLarge,
+.subTeamHeadingMedium,
+.subTeamHeadingSmall {
+  /* Increased font sizes and boldness */
+  font-weight: 700; /* Makes the text bold */
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.subTeamHeadingLarge {
+  font-size: 2em; /* Increased from 1.6em */
+}
+
+.subTeamHeadingMedium {
+  font-size: 1.8em; /* Increased from 1.6em */
+}
+
+.subTeamHeadingSmall {
+  font-size: 1.6em; /* Increased from 1.6em */
+}
+
+/* Team Container */
 .teamContainer {
   display: flex;
   justify-content: center;
@@ -9,218 +45,278 @@ body {
   padding: 20px;
 }
 
-.teamSection {
-  margin-bottom: 40px; /* Gap between each row */
-}
-
-.mainHeading {
-  font-size: 2.5em;
-  text-align: center;
-  color: rgb(3, 168, 163);
-  margin-bottom: 40px;
-}
-
+/* Team Box */
 .teamBox {
   display: flex;
   flex-direction: column;
-  background-color: #b2d3d386;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1400px;
+  width: 100%;
 }
 
-.doaaUgPgChairWrapper,
-.adminAcademicRegistrarWrapper,
-.adminMTechPhdWrapper,
-.adminBTechWrapper {
+/* Row Wrappers */
+.rowWrapper {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 40px;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
+  margin-bottom: 40px;
 }
 
-.subTeamHeadingLarge, .subTeamHeadingMedium, .subTeamHeadingSmall {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: black;
-  text-align: center;
+.singleRow {
+  justify-content: center;
+}
+
+/* Team Section */
+.teamSection {
+  flex: 1 1 300px;
 }
 
 .teamCardWrapper {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Space between the cards */
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Unified Team Card Styles */
+.teamCardLarge,
+.teamCardMedium,
+.teamCardSmall {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 .teamCardLarge {
   width: 220px;
-  min-height: 320px; /* Changed from height to min-height */
-  background-color: #b2d3d386;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  min-height: 320px;
 }
 
 .teamCardMedium {
   width: 200px;
-  min-height: 300px; /* Changed from height to min-height */
-  background-color: #b2d3d386;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  min-height: 300px;
 }
 
 .teamCardSmall {
   width: 180px;
-  min-height: 280px; /* Changed from height to min-height */
-  background-color: #b2d3d386;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px;
+  min-height: 280px;
+}
+
+.teamCardLarge:hover,
+.teamCardMedium:hover,
+.teamCardSmall:hover {
+  transform: translateY(-8px);
+  background-color: #b2ebf2;
 }
 
 .teamCardImage {
-  width: 80%;
-  height: auto;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-top: 15px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #0398a3;
 }
 
 .teamCardInfo {
   text-align: center;
-  padding-top: 10px;
-  flex-grow: 1; /* Allows the info section to take up available space */
 }
 
 .teamMemberName {
   font-size: 1.2em;
-  color: #333;
-  margin-bottom: 12px;
-  word-wrap: break-word;
+  color: #00796b;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .teamMemberRole {
   font-size: 1em;
   color: #555;
-  word-wrap: break-word;
+  font-weight: 500;
 }
 
-.teamCardLarge:hover, .teamCardMedium:hover, .teamCardSmall:hover {
-  transform: translateY(-5px);
-  background-color: rgba(90, 150, 150, 0.637);
-}
-
-@media (max-width: 800px) {
-  .teamBox {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .doaaUgPgChairWrapper,
-  .adminAcademicRegistrarWrapper,
-  .adminMTechPhdWrapper,
-  .adminBTechWrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 1200px) {
-  .teamBox {
-    width: 95%;
-    margin: 0 auto;
-  }
-
-  .teamCardWrapper {
-    justify-content: space-around;
-  }
-
-  .teamCardLarge, .teamCardMedium, .teamCardSmall {
-    width: 80%;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .mainHeading {
-    font-size: 2em;
-  }
-
-  .teamBox {
-    width: 90%;
-    padding: 15px;
-  }
-
-  .teamCardLarge, .teamCardMedium, .teamCardSmall {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .teamCardImage {
-    width: 100%;
-    height: auto;
-  }
-
-  .subTeamHeadingLarge, .subTeamHeadingMedium, .subTeamHeadingSmall {
-    font-size: 1.2em;
-  }
-}
-
-@media (max-width: 480px) {
-  .mainHeading {
-    font-size: 1.8em;
-  }
-
-  .teamCardLarge, .teamCardMedium, .teamCardSmall {
-    width: 100%;
-  }
-
-  .teamCardWrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .teamCardImage {
-    height: auto;
-    width: 90%;
-  }
-}
-
+/* Back Button */
 .backButton {
   position: fixed;
-  top: 100px;
-  left: 50px;
-  width: 40px;
-  height: 40px;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: rgb(3, 168, 163);
+  background-color: #0398a3;
   color: white;
   border: none;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  font-size: 1.8em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s;
   z-index: 1000;
 }
 
 .backButton:hover {
-  background-color: rgb(2, 136, 131);
+  background-color: #02777a;
+  transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .teamBox {
+    padding: 25px;
+  }
+
+  .teamCardLarge,
+  .teamCardMedium,
+  .teamCardSmall {
+    width: 180px;
+    min-height: 280px;
+    padding: 15px;
+  }
+
+  .teamCardImage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .rowWrapper {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .rowWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamSection {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .teamCardWrapper {
+    justify-content: center;
+  }
+
+  .teamCardLarge,
+  .teamCardMedium,
+  .teamCardSmall {
+    width: 220px;
+    min-height: 320px;
+  }
+
+  .teamCardImage {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .rowWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamSection {
+    flex: 1 1 100%;
+    max-width: 500px;
+  }
+
+  .teamCardWrapper {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 2.5em;
+    margin: 20px 0;
+  }
+
+  .subTeamHeadingLarge,
+  .subTeamHeadingMedium,
+  .subTeamHeadingSmall {
+    font-size: 1.8em; /* Increased for smaller screens */
+  }
+
+  .teamBox {
+    padding: 20px;
+  }
+
+  .teamCardLarge,
+  .teamCardMedium,
+  .teamCardSmall {
+    width: 200px;
+    min-height: 300px;
+    padding: 15px;
+  }
+
+  .teamCardImage {
+    width: 90px;
+    height: 90px;
+  }
+
+  .teamMemberName {
+    font-size: 1.1em;
+  }
+
+  .teamMemberRole {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 2em;
+    margin: 15px 0;
+  }
+
+  .subTeamHeadingLarge,
+  .subTeamHeadingMedium,
+  .subTeamHeadingSmall {
+    font-size: 1.6em; /* Further increased for mobile */
+  }
+
+  .backButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+  }
+
+  .teamCardLarge,
+  .teamCardMedium,
+  .teamCardSmall {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .teamCardWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamCardImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .rowWrapper {
+    gap: 20px;
+  }
 }
