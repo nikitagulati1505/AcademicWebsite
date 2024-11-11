@@ -20,7 +20,7 @@ body {
     background-color: rgb(239, 239, 240);
 }
 
-/* Updated About Us Container with Adjusted Image Size and Softer Background Color */
+/* About Us Container */
 .aboutUsContainer {
     padding-top: 3vh;
     padding-bottom: 3vh;
@@ -31,7 +31,6 @@ body {
     align-items: center;
     max-width: 100%;
     background: linear-gradient(135deg, rgba(3, 128, 124, 0.436), rgba(0, 137, 143, 0.7));
-    /* Adjusted gradient to softer colors */
     color: #ffffff;
     overflow: hidden;
 }
@@ -53,7 +52,7 @@ body {
 
 /* Adjusted image size */
 .aboutUsContainer .textContainer {
-    width: 55%; /* Increased width to accommodate more text space */
+    width: 55%;
     padding: 0 20px;
     animation: fadeIn 1.5s ease-in;
 }
@@ -63,9 +62,8 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
-/* Made image smaller */
 .aboutUsContainer img {
-    width: 40%; /* Reduced from 50% to 40% */
+    width: 40%;
     height: auto;
     margin: 0;
     padding: 0;
@@ -76,8 +74,6 @@ body {
     from { transform: scale(1); }
     to { transform: scale(1.05); }
 }
-
-/* Rest of your existing styles */
 
 /* Academics Section */
 .academics {
@@ -105,18 +101,18 @@ body {
     width: 100%;
 }
 
+/* Updated .team .section styles */
 .team .section {
     background-color: #3e5b8e;
     color: white;
     border-radius: 10px;
     width: 150px;
-    height: 120px;
     padding: 16px;
     margin: 1vh;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 14px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -129,17 +125,24 @@ body {
     transform: translateY(-5px);
 }
 
+/* Updated image styles */
 .team img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-bottom: 10px;
+    object-fit: contain;
 }
 
-.team .section span {
-    display: block;
-    margin: 4px 0;
+/* Adjust text inside buttons */
+.team .section a, .team .section p {
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0;
+    color: white;
+    text-decoration: none;
 }
 
+/* Media Queries for Responsive Design */
 @media (max-width: 900px) {
     .team .section {
         width: 30%;
@@ -149,12 +152,32 @@ body {
 @media (max-width: 600px) {
     .team .section {
         width: 45%;
+        margin: 5px;
+    }
+
+    .team img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .team .section a, .team .section p {
+        font-size: 13px;
     }
 }
 
 @media (max-width: 400px) {
     .team .section {
         width: 100%;
+        margin: 5px 0;
+    }
+
+    .team img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .team .section a, .team .section p {
+        font-size: 12px;
     }
 }
 
@@ -227,8 +250,6 @@ body {
     }
 }
 
-/* Rest of your existing styles */
-
 /* Resource Container */
 .resource-container {
     display: flex;
@@ -258,7 +279,6 @@ body {
     transition: transform 5s ease;
 }
 
-/* Slow zoom animation for image */
 .resource-image:hover {
     transform: scale(1.1);
 }
@@ -415,14 +435,14 @@ body {
     }
 
     .team img {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 5px;
     }
 
-    .team .section p,
-    .team .section a {
-        font-size: 14px;
+    .team .section a,
+    .team .section p {
+        font-size: 12px;
         word-wrap: break-word;
         text-align: center;
     }
@@ -432,3 +452,5 @@ body {
         margin: 10px 0;
     }
 }
+
+/* ... Rest of your existing styles ... */

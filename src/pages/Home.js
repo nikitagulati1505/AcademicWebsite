@@ -145,7 +145,6 @@ const Home = () => {
                                         </a>
                                     </div>
                                 </Parallax>
-                                {/* Restored button */}
                                 <Parallax>
                                     <div className="section">
                                         <a
