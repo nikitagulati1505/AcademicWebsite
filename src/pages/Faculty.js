@@ -58,11 +58,8 @@ const Faculty = () => {
             <div className="faculty-rows">
                 <div className="faculty-row">
                     {firstRowItems.map((item, index) => (
-                        <Parallax
-                            key={index}
-                            className="faculty-parallax"
-                        >
-                            <div className={size > 820 ? 'faculty-box' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}>
+                        <Parallax key={index} className="faculty-parallax">
+                            <div className={`faculty-box ${size > 820 ? '' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}`}>
                                 <div className="faculty-section">
                                     <div className="faculty-subheading">
                                         <strong>{item.title}</strong>
@@ -85,6 +82,8 @@ const Faculty = () => {
                                             <a
                                                 className="faculty-link"
                                                 href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 onClick={(e) => {
                                                     if (item.link === '/blank') {
                                                         e.preventDefault();
@@ -103,11 +102,8 @@ const Faculty = () => {
                 </div>
                 <div className="faculty-row">
                     {secondRowItems.map((item, index) => (
-                        <Parallax
-                            key={index}
-                            className="faculty-parallax"
-                        >
-                            <div className={size > 820 ? 'faculty-box' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}>
+                        <Parallax key={index} className="faculty-parallax">
+                            <div className={`faculty-box ${size > 820 ? '' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}`}>
                                 <div className="faculty-section">
                                     <div className="faculty-subheading">
                                         <strong>{item.title}</strong>
@@ -115,6 +111,8 @@ const Faculty = () => {
                                         <a
                                             className="faculty-link"
                                             href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             onClick={(e) => {
                                                 if (item.link === '/blank') {
                                                     e.preventDefault();
@@ -132,7 +130,7 @@ const Faculty = () => {
                 </div>
             </div>
 
-            {/* Popup Modal */}
+            {/* Popup Modal for Guidelines */}
             {showPopup && popupContent === 'guidelines' && (
                 <div className="faculty-modal-overlay" onClick={handleClosePopup}>
                     <div className="faculty-modal-content faculty-larger-popup" onClick={(e) => e.stopPropagation()}>
@@ -144,6 +142,7 @@ const Faculty = () => {
                 </div>
             )}
 
+            {/* Popup Modal for Meeting Minutes */}
             {showPopup && popupContent === 'meetingMinutes' && (
                 <div className="faculty-modal-overlay" onClick={handleClosePopup}>
                     <div className="faculty-modal-content faculty-larger-popup" onClick={(e) => e.stopPropagation()}>

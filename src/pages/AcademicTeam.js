@@ -149,11 +149,7 @@ const AcademicTeam = () => {
                     designation: "Junior Administrative Officer",
                     imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/sanjanas.jpg"
                 },
-                {
-                    name: "MOHIT KUMAR",
-                    designation: "Assistant Administrative Officer (IRD)",
-                    imgSrc: "https://iiitd.ac.in/sites/default/files/images/admin/staff/mohit.jpg"
-                },
+               
                 {
                     name: "PRACHI MUKHERJEE",
                     designation: "Assistant Administrative Officer(SG)",
