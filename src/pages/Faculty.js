@@ -1,3 +1,4 @@
+// faculty.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Parallax } from 'react-scroll-parallax';
@@ -37,43 +38,80 @@ const Faculty = () => {
         setShowPopup(false);
     };
 
+    // Split items into two rows
+    const items = [
+        { title: "Teaching & Learning", link: "https://iiitd.ac.in/iqac", text: "IQAC" },
+        { title: "Guidelines", link: "/blank", text: "SOP" },
+        { title: "Meeting Minutes", link: "https://academics.iiitd.ac.in/meetings/list.php", text: "Minutes" },
+        { title: "Academic Regulations", link: "https://iiitd.ac.in/academics/resources", text: "Regulations" },
+        { title: "Awards", link: "https://awards.iiitd.edu.in/", text: "Awards" },
+    ];
+
+    const firstRowItems = items.slice(0, 3); // First 3 items
+    const secondRowItems = items.slice(3);    // Remaining items
+
     return (
         <div className='faculty-page' style={{ backgroundColor: "rgb(239, 239, 240)" }}>
-            <div className={size > 820 ? 'heading' : size > 500 ? 'smallHeading' : 'vSmallHeading'}>
+            <div className={size > 820 ? 'faculty-heading' : size > 500 ? 'faculty-smallHeading' : 'faculty-vSmallHeading'}>
                 Faculty
             </div>
             <div className="faculty-rows">
-                {[
-                    { title: "Teaching & Learning", link: "https://iiitd.ac.in/iqac", text: "IQAC" },
-                    { title: "Guidelines", link: "/blank", text: "SOP" },
-                    { title: "Meeting Minutes", link: "https://academics.iiitd.edu.in/meetings/list.php", text: "Minutes" },
-                    { title: "Academic Regulations", link: "https://iiitd.ac.in/academics/resources", text: "Regulations" },
-                    { title: "Awards", link: "https://awards.iiitd.edu.in/", text: "Awards" },
-                ].map((item, index) => (
-                    <Parallax
-                        key={index}
-                        className="faculty-parallax"
-                    >
-                        <div className={size > 820 ? 'faculty-box' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}>
-                            <div className="faculty-section">
-                                <div className="faculty-subheading">
-                                    <strong>{item.title}</strong>
-                                    <br />
-                                    {item.title === "Guidelines" ? (
-                                        <span
-                                            className="faculty-link faculty-clickable"
-                                            onClick={handleGuidelinesClick}
-                                        >
-                                            {item.text}
-                                        </span>
-                                    ) : item.title === "Meeting Minutes" ? (
-                                        <span
-                                            className="faculty-link faculty-clickable"
-                                            onClick={handleMeetingMinutesClick}
-                                        >
-                                            {item.text}
-                                        </span>
-                                    ) : (
+                <div className="faculty-row">
+                    {firstRowItems.map((item, index) => (
+                        <Parallax
+                            key={index}
+                            className="faculty-parallax"
+                        >
+                            <div className={size > 820 ? 'faculty-box' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}>
+                                <div className="faculty-section">
+                                    <div className="faculty-subheading">
+                                        <strong>{item.title}</strong>
+                                        <br />
+                                        {item.title === "Guidelines" ? (
+                                            <span
+                                                className="faculty-link faculty-clickable"
+                                                onClick={handleGuidelinesClick}
+                                            >
+                                                {item.text}
+                                            </span>
+                                        ) : item.title === "Meeting Minutes" ? (
+                                            <span
+                                                className="faculty-link faculty-clickable"
+                                                onClick={handleMeetingMinutesClick}
+                                            >
+                                                {item.text}
+                                            </span>
+                                        ) : (
+                                            <a
+                                                className="faculty-link"
+                                                href={item.link}
+                                                onClick={(e) => {
+                                                    if (item.link === '/blank') {
+                                                        e.preventDefault();
+                                                        navigate('/blank');
+                                                    }
+                                                }}
+                                            >
+                                                {item.text}
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </Parallax>
+                    ))}
+                </div>
+                <div className="faculty-row">
+                    {secondRowItems.map((item, index) => (
+                        <Parallax
+                            key={index}
+                            className="faculty-parallax"
+                        >
+                            <div className={size > 820 ? 'faculty-box' : size > 500 ? 'faculty-smallBox' : 'faculty-vSmallBox'}>
+                                <div className="faculty-section">
+                                    <div className="faculty-subheading">
+                                        <strong>{item.title}</strong>
+                                        <br />
                                         <a
                                             className="faculty-link"
                                             href={item.link}
@@ -86,12 +124,12 @@ const Faculty = () => {
                                         >
                                             {item.text}
                                         </a>
-                                    )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Parallax>
-                ))}
+                        </Parallax>
+                    ))}
+                </div>
             </div>
 
             {/* Popup Modal */}

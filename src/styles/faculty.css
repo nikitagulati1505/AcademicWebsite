@@ -15,14 +15,38 @@
     text-align: center;
 }
 
+.faculty-smallHeading {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-top: 20px;
+    color: rgb(4, 145, 140);
+    text-align: center;
+}
+
+.faculty-vSmallHeading {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 20px;
+    color: rgb(4, 145, 140);
+    text-align: center;
+}
+
 /* Rows Container */
 .faculty-rows {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-direction: column; /* Stack rows vertically */
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Individual Row */
+.faculty-row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping within a row */
     justify-content: center;
     align-items: flex-start;
-    margin: 0 auto;
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    margin-bottom: 20px; /* Space between rows */
 }
 
 /* Faculty Boxes */
@@ -41,6 +65,19 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+}
+
+/* Adjusted Small and Very Small Boxes */
+.faculty-smallBox {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+}
+
+.faculty-vSmallBox {
+    width: 160px;
+    height: 160px;
+    margin: 8px;
 }
 
 /* Hover Effects */
@@ -153,6 +190,10 @@
 
 /* Tablets and Smaller Screens */
 @media (max-width: 1024px) {
+    .faculty-row {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
     .faculty-box {
         width: 180px;
         height: 180px;
@@ -162,7 +203,7 @@
         font-size: 1em;
     }
 
-    .faculty-heading {
+    .faculty-heading, .faculty-smallHeading, .faculty-vSmallHeading {
         font-size: 2.2em;
     }
 }
@@ -179,7 +220,7 @@
         font-size: 0.9em;
     }
 
-    .faculty-heading {
+    .faculty-heading, .faculty-smallHeading, .faculty-vSmallHeading {
         font-size: 2em;
         margin-bottom: 30px;
     }
@@ -197,7 +238,7 @@
         font-size: 0.8em;
     }
 
-    .faculty-heading {
+    .faculty-heading, .faculty-smallHeading, .faculty-vSmallHeading {
         font-size: 1.8em;
         margin-bottom: 20px;
     }
