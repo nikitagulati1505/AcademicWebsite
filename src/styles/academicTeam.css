@@ -1,3 +1,5 @@
+/* academicTeam.css */
+
 /* Global Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -173,6 +175,26 @@ body {
 /* Footer */
 .footer {
   margin-top: 50px;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.loading {
+  color: #555;
+}
+
+.error {
+  color: #ff5252;
+  background-color: #ffeaea;
+  padding: 10px;
+  border: 1px solid #ff5252;
+  border-radius: 5px;
 }
 
 /* Responsive Design */
